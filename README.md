@@ -5,6 +5,11 @@
 - Statok: Energia(75-50), Telítettség(50-100), Pénz(0-250), Idő(08:00), Időjárás(napos)
 - Starter inventory: 1 sportszelet
 
+### Inventory
+- Fánk
+- Sportszelet
+- Energiaital
+
 ### Energia
 - ha 0: meghalsz
 - séta: random(15, 20)%, 1 óra
