@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-11T11:54:34.328Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="bJZsrCQkEGrmWROq9MQ2" version="22.0.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-11T11:58:42.685Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="efJnOACMQRXHIfV9SHTm" version="22.0.4" type="github">
   <diagram name="1 oldal" id="HCi74r8AC1qW8FaivY9Q">
     <mxGraphModel dx="1434" dy="790" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10000" pageHeight="10000" math="0" shadow="0">
       <root>
@@ -208,8 +208,37 @@
         <mxCell id="XL5i5x2tit-ejIarr1dZ-66" value="Trébánya" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="300" y="640" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="XL5i5x2tit-ejIarr1dZ-78" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="XL5i5x2tit-ejIarr1dZ-7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="480" y="600" as="targetPoint" />
+            <mxPoint x="320" y="550" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="360" y="550" />
+              <mxPoint x="360" y="520" />
+              <mxPoint x="470" y="520" />
+              <mxPoint x="470" y="600" />
+              <mxPoint x="520" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XL5i5x2tit-ejIarr1dZ-79" value="Nem" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XL5i5x2tit-ejIarr1dZ-78">
+          <mxGeometry x="0.1474" y="-5" relative="1" as="geometry">
+            <mxPoint x="-45" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XL5i5x2tit-ejIarr1dZ-81" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XL5i5x2tit-ejIarr1dZ-75" target="XL5i5x2tit-ejIarr1dZ-80">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XL5i5x2tit-ejIarr1dZ-82" value="Igen" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XL5i5x2tit-ejIarr1dZ-81">
+          <mxGeometry x="-0.0667" y="2" relative="1" as="geometry">
+            <mxPoint x="-2" y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="XL5i5x2tit-ejIarr1dZ-75" value="Leszállunk?" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="300" y="530" width="120" height="60" as="geometry" />
+          <mxGeometry x="300" y="550" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="XL5i5x2tit-ejIarr1dZ-80" value="Ha veszünk energiaitalt:&lt;br&gt;Dani secret" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="550" width="140" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
