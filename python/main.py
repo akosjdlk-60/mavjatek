@@ -8,7 +8,7 @@ from rich.console import Console
 console = Console()
 
 def main():
-    # while True:
+
         global statok
         global inventory
         
@@ -32,7 +32,8 @@ def main():
         # Game
         while True:
             os.system("cls")
-            console.print("MÁV Játék", style="bold blue underline")
+            console.print("MÁV Játék", style="bold blue")
+            menuk.statmenu(statok, inventory)
             sleep(1)
 
 main()
