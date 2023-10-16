@@ -2,6 +2,7 @@ import random
 import datetime
 from time import sleep
 import menuk
+import os
 
 def main():
     # while True:
@@ -25,7 +26,9 @@ def main():
             "Energiaital": 0
         }
 
-        menuk.statmenu(statok)
-
+        while True:
+            sleep(1)
+            os.system("cls")
+            menuk.statmenu(statok, inventory)
 
 main()
