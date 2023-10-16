@@ -47,10 +47,10 @@
 - virág: 1500
 
 ## Menük:
-- főmenü (storyline explaining)
-- Állomásmenü
-- boltmenü
-- vonatmenü
+- főmenü (storyline explaining) -- menu.fomenu
+- Állomásmenü -- menu.allomasmenu
+- boltmenü -- menu.boltmenu
+- vonatmenü -- menu.vonatmenu
 
 ### Állomás menüpontok:
 - Séta a boltba
