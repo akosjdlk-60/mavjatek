@@ -3,6 +3,9 @@ import datetime
 from time import sleep
 import menuk
 import os
+from rich.console import Console
+
+console = Console()
 
 def main():
     # while True:
@@ -26,9 +29,10 @@ def main():
             "Energiaital": 0
         }
 
+        # Game
         while True:
-            sleep(1)
             os.system("cls")
-            menuk.statmenu(statok, inventory)
+            console.print("MÁV Játék", style="bold blue underline")
+            sleep(1)
 
 main()
