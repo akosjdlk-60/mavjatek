@@ -80,46 +80,6 @@ GAME OVER
 ## Város event
 asd
 
-## Vonat event
-1.
-"Miközben a vonaton ülsz, egy férfi leül melléd."
-"Látod, hogy a bal keze gipszben van."
-""Elmondjam, hogy mi történt a kezemmel?" - kérdezi a férfi."
-"Fejrázással jeleznéd, hogy nem érdekel, de már érzed, hogy úgy is elmondaná."
-""Egy hete egy balesetben eltört a kezem. A kórházban azt mondták, hogy 3 hétig nem használhatom." - mondja a férfi."
-""De én nem bírok ki ennyi időt munka nélkül, így elkezdtem dolgozni." - folytatja."
-""A főnököm viszont nem tudja, hogy eltört a kezem, mert akkor kirúgna." - mondja a férfi."
-""Ezért minden nap bekenem a kezem fájdalomcsillapító krémmel, és úgy dolgozom." - mondja a férfi."
-""De a krém nem elég erős, így még mindig nagyon fáj a kezem.""
-""Ezért minden nap beiszok egy üveg vodkát is, hogy ne érezzem a fájdalmat." - mondja."
-""De a vodkától nagyon részeg leszek, és nem tudok hazamenni.""
-""Ezért minden nap egy kis kokaint is szoktam szívni, hogy ne legyek részeg." - mondja."
-""De a kokaintól nagyon felpörögök, és nem tudok elaludni.""
-""Ezért minden nap beveszek egy kis nyugtatót is, hogy el tudjak aludni.""
-""De a nyugtatótól nagyon fáradt leszek, és nem tudok dolgozni.""
-"Ekkor eleged lesz a férfiból, és felállsz."
-"Elköszönsz a férfitól, és átmész egy másik kabinba."
-2.
-"Miközben a vonaton ülsz, egyszer csak két szőke nő leül hozzád."
-"Az egyik ezt kérdezi: "Jó napot kívánok. Eljuthatok ezzel a vonattal Londonba?""
-"Rázod a fejed, hogy nem."
-"Erre a másik nő ezt mondja: "És én?""
-------------------------------------------------------------------------------------------------------------------------
-
-# Chapter 1
-"Hajnali 5 órakor Budapest utcáinak hideg szele felébreszt... valami nem stimmel..."
-"Egyszer csak egy fiatal férfi odasétál hozzád, a kezedbe nyom egy levelet és a kalapodba tesz egy kis pénzt."
-"Mire felfogod mi történt, a férfi már sehol sincs."
-"Kinyitod a levelet és elolvasod a tartalmát:
-Kedves {nev}!
-Ha ezt olvasod, én már meghaltam. Egy távoli rokonod vagyok, Bécsben élek. Szeretném ha eljönnél a temetésemre. 
-A temetés 3 nap múlva lesz, 15:00-kor. A bécsi vasútállomáson fogadni fognak.
-Jól esne ha hoznál egy csokor virágot a síromra. Ha ezt megteszed, a család megjutalmaz.
-Köszönettel: Henry bácsi"
-"Ugyan már, ez csak egy átverés lehet, de azért elolvasod még egyszer a levelet."
-"Közben megnézed a pénzt is, {penz} forintot találsz a kalapodban."
-"Bár földrajzból nem voltál valami jó, tudod hogy Bécs gyalog elég messze van."
-"Végül úgy döntesz, hogy elindulsz Bécsbe, mivel úgy sincs semmi vesztenivalód."
 
 # Chapter 2
 "Elsétálsz a Keleti pályaudvarra."
