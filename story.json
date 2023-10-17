@@ -1,0 +1,12 @@
+{
+    "Eventek": {
+        "Város": {
+            "1": "Text",
+            "2": ["elso szoveg", "masodik"]
+        },
+        "Vonat": {
+            "1": "Text",
+            "2": "Text"
+        }
+    }
+}
