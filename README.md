@@ -80,14 +80,13 @@
 
 ### Vonat eventek
 - Biztósitóberendezési hiba miatt késés (min. 30p) max 1 / vonat
-- Felsővezeték szakadás (2óra vagy pótlóbusz: ha nincs jegy => baj) max 1 / vonat
+- Felsővezeték szakadás (2óra) max 1 / vonat
 - Valaki elkezd hozzád beszélni: -20% energia
 - Jön az ellenőr (ha nincs jegy akkor bűntetés)
 
 ### Város Eventek:
 - Kirabolnak: -(15-50)% pénz                    --- 10%, este 20:00 után 25%
-- Valaki elkezd hozzád beszélni: -20% energia   --- 30% este 20:00 után 0%
 - Találsz egy 500ast a földön                   --- 5%
-- Találsz egy 200ast a földön                   --- 10%
-- Találsz egy 50est a földön                    --- 10%
-- Találsz egy 10est a földön                    --- 10%
+- Találsz egy 200ast a földön                   --- 12%
+- Találsz egy 50est a földön                    --- 18%
+- Találsz egy 10est a földön                    --- 20%

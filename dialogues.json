@@ -1,0 +1,51 @@
+{
+    "story": {
+        "Budapest": ["8 óra körül Budapest utcáinak hideg szele felébreszt... valami nem stimmel...", "Egyszer csak egy fiatal férfi odasétál hozzád, a kezedbe nyom egy levelet és a kalapodba tesz egy kis pénzt.", "Mire felfogod mi történt, a férfi már sehol sincs.", "Kinyitod a levelet és elolvasod a tartalmát: Kedves {nev}! Ha ezt olvasod, én már meghaltam. Egy távoli rokonod vagyok, Bécsben élek. Szeretném ha eljönnél a temetésemre. A temetés 3 nap múlva lesz, 15:00-kor. A bécsi vasútállomáson fogadni fognak. Jól esne ha hoznál egy csokor virágot is a síromra. Ha ezt megteszed, a család megjutalmaz. Köszönettel: Henry bácsi", "Ugyan már, ez csak egy átverés lehet, de azért elolvasod még egyszer a levelet.", "Közben megnézed a pénzt is, {penz} forintot találsz a kalapodban.", "Bár földrajzból nem voltál valami jó, tudod hogy Bécs gyalog elég messze van.", "Végül úgy döntesz, hogy elindulsz Bécsbe, mivel úgy sincs semmi vesztenivalód.", "Elsétálsz a Keleti pályaudvarra.", "Mikor belépsz az állomás hatalmas kapuin, körülnézel...", "Szemügyre veszed a menetrendet", "A következő vonat 14:00-kor indul Bécs felé."],
+        "Tatabánya": [],
+        "Győr": [],
+        "Bécs": []
+    },
+
+    "eventek": {
+        "varos": {
+            "rablas": ["Miközben a város utcáin sétálsz, egyszer csak egy kétes kinézetű férfi odalép hozzád.", "A férfi egy pisztolyt fog a fejedhez, és azt mondja: Add ide minden pénzed te csöves!", "Mivel nem akarsz meghalni, átadsz egy kis pénzt.", "Mivel a másik zsebedben is van pénz, ezért egy kicsit meg tudsz tartani.", "A férfi elszalad, te pedig tovább sétálsz."],
+            "penz": ["Menet közben lenézel és találsz a földön {x} forintot", "Lehajolsz, felveszed, majd továbbmész."]
+        },
+        "vonat": {
+            "ferfi": ["Miközben a vonaton ülsz, egy férfi leül melléd.", "Látod, hogy a bal keze gipszben van.", "Elmondjam, hogy mi történt a kezemmel? - kérdezi a férfi.", "Fejrázással jeleznéd, hogy nem érdekel, de már érzed, hogy úgy is elmondaná.", "Egy hete egy balesetben eltört a kezem. A kórházban azt mondták, hogy 3 hétig nem használhatom. - mondja a férfi.", "De én nem bírok ki ennyi időt munka nélkül, így elkezdtem dolgozni. - folytatja.", "A főnököm viszont nem tudja, hogy eltört a kezem, mert akkor kirúgna. - mondja a férfi.", "Ezért minden nap bekenem a kezem fájdalomcsillapító krémmel, és úgy dolgozom. - mondja a férfi.", "De a krém nem elég erős, így még mindig nagyon fáj a kezem.", "Ezért minden nap beiszok egy üveg vodkát is, hogy ne érezzem a fájdalmat. - mondja.", "De a vodkától nagyon részeg leszek, és nem tudok hazamenni.", "Ezért minden nap egy kis kokaint is szoktam szívni, hogy ne legyek részeg. - mondja.", "De a kokaintól nagyon felpörögök, és nem tudok elaludni.", "Ezért minden nap beveszek egy kis nyugtatót is, hogy el tudjak aludni.", "De a nyugtatótól nagyon fáradt leszek, és nem tudok dolgozni.", "Ekkor eleged lesz a férfiból, és felállsz.", "Elköszönsz a férfitól, és átmész egy másik kabinba."],
+            "nok": ["Miközben a vonaton ülsz, egyszer csak két szőke nő leül hozzád.", "Az egyik ezt kérdezi: Jó napot kívánok. Eljuthatok ezzel a vonattal Londonba?", "Rázod a fejed, hogy nem.", "Erre a másik nő ezt mondja: És én?", "Eleged lesz a nők hülyeségéből, és felállsz.", "Átmész egy másik kabinba."],
+            "biztHiba": ["Már egy ideje utazol, mikor kicsit kezdesz elálmosodni.", "Mikor már épp lehunynád a szemed, hirtelen a bemondó éles hangja felélénkít: Kedves Utasaink! Sajnálattal közöljük, hogy biztosítóberendezési hiba miatt a járat 40 percet késik. Elnézésüket és megértésüket kérjük.", "Dühödben káromkodnál egyet, de hallod, hogy a többi utas erről már gondoskodik."],
+            "vezetekSzakadas": ["Már egy ideje utazol, mikor eltűnődsz azon, hol rontottad el az életed.", "A mély gondolatokat a bemondó éles hangja szakítja meg: Kedves Utasaink! Sajnálattal közöljük, hogy felsővezeték szakadás miatt a járat 2 órát késik. Elnézésüket és megértésüket kérjük.", "Dühödben káromkodnál egyet, de hallod, hogy a többi utas erről már gondoskodik."]
+        }
+    },
+
+    "menu": {
+        "allomas": {
+            "seta": "Elsétálsz a boltba, majd körülnézel...",
+            "futas": "Elfutsz a boltba és mikor odaérsz körülnézel...",
+            "felszallas": "Felszállsz a vonatra és leülsz egy szabad helyre...",
+            "jegyVasarlas": "Odasétálsz az egyik jegyautomatához és vásárolsz egy jegyet a következő állomásig.",
+            "lopasGyerek": ["Meglátsz egy kisgyereket és elállod az útját.", "A kezedet egy zacskóba dugod, és a gyereknek mutatod hogy azt higgye pisztoly van nálad.", "Ide az uzsipénzed, vagy lelövöm a fejed! - mondod a gyereknek.", "A kisgyerek megijed, és átadja a pénzét."],
+            "lopasFerfi": ["Meglátsz egy öltönyös férfit és elállod az útját.", "A kezedet egy zacskóba dugod, és a férfinak mutatod hogy azt higgye pisztoly van nálad.", "Ide az pénzed, vagy lelövöm a fejed te rohadék! - ordítod a férfinak.", "A férfi megijed, és átadja a pénzét.", "Nyugalom, nem akarok meghalni! - mondja a férfi."],
+            "elkapnak": ["Mikor el akarsz rohanni, a rendőrök meglátnak.", "Elkapnak, és börtönbe zárnak.", "GAME OVER"],
+            "keregetes": ["Odaállsz az egyik jegyautomata mellé és minden arra járó embertől pénzt kérsz.", "Végül összesen {penz} forintot szerzel."],
+            "varakozas:": "Leülsz egy padra és vársz a vonatodra."
+        },
+        "vonat": {
+            "indulas": "Elindul a vonat, és a hátad mögött már hallod az ellenőr hangját.",
+            "blicceles": ["Mivel nem akarod, hogy megbüntessen, elbújsz a közeli WC-ben.", "Mikor kijössz, már nincs ott az ellenőr.", "Visszamész a helyedre."],
+            "jegyVan": "Megmutatod a jegyedet az ellenőrnek. Leellenőrzi majd továbbmegy.",
+            "jegyNincs": ["Amikor az ellenőr megkér, hogy mutasd meg a jegyedet, azt mondod neki, hogy nincs.", "Megkérdezi, hogy miért nincs, de nem tudsz mit mondani.", "Előveszi a csekkfüzetét és ráfirkál valamit.", "Letépi a csekket és a kezedbe nyomja", "Ránézel a csekkre, és látod, hogy {penz} forintot kell fizetned."],
+            "jegyNincsPenzNincs": ["Elmondod az ellenőrnek, hogy nincs nálad pénz, így ő hívja a rendőröket.", "Az ellenőr leszállít a vonatról, és a rendőrök börtönbe zárnak.", "GAME OVER"],
+            "alvas": ["Melletted pont üres egy hely, így lefekszel és elalszol.", "Amikor felébredsz, körülnézel..."],
+            "leszallas": "Leszállsz a vonatról és körülnézel..."
+        },
+        "bolt": {
+            "vasarlas": "Veszel egy {targy}-t, ami {ar} forintba kerül.",
+            "lopas": ["Úgy döntesz, hogy lopsz egy {targy}-t", "Vársz egy kicsit, majd mikor senki nem figyel rád, elrejted a kabátodban."],
+            "elkapnak": ["Mikor el akarsz rohanni, a eladó meglát.", "A rendőrök elkapnak, és börtönbe zárnak.", "GAME OVER"],
+            "seta": "Elsétálsz az állomásra, majd körülnézel...",
+            "futas": "Elfutsz az állomásra és mikor odaérsz körülnézel..."
+        }
+    }
+}
