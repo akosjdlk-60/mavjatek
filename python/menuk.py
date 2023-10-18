@@ -8,10 +8,22 @@ import time
 from os import system as cmd
 from os import get_terminal_size
 
+
 console = Console(force_terminal=True)
 stattable = Table(show_edge=True, show_lines=False, show_header=False)
 
-def statmenu(statok: dict, inventory: dict) -> None:
+
+def update_opciok(opciok: list):
+    global layout
+    print("asd")
+    opcio_layout = Layout(name="tgzuiop")
+    opcio_layout.split_column("")
+    for opcio in opciok:
+        opcio_layout.add_split(opcio)
+    layout["opciok"].update(opcio_layout)
+
+
+def update_stats(statok: dict, inventory: dict) -> None:
     if statok["jegy"] == True:
         jegy = "Van"
     else: jegy = "Nincs"
@@ -27,45 +39,61 @@ def statmenu(statok: dict, inventory: dict) -> None:
 
 
 layout = Layout()
-def screen():
+def mainLayout() -> Layout:
+    global layout
     cmd('cls')
+
+    # 2 fő rész
     layout.split_row(
         Layout(name="game"),
         Layout(name="nothing")
-    )
+    ) 
     layout['game'].ratio = 1
     layout['nothing'].ratio = 1
+
+    
     layout['game'].split_column(
         Layout(name="jatekter"),
-        Layout(name="statok")
+        Layout(name="toolbar")
     )
     
     layout['jatekter'].split_row(
         Layout(name="opciok"),
-        Layout(name="szoveg"),
+        Layout(name="szoveg")
     )
+    layout['toolbar'].split_row(
+        Layout(name="statok"),
+        Layout(name="")
+    )
+
+    # Méretek
     layout['jatekter'].size=None
     layout['statok'].size=None
     layout['opciok'].size=None
     layout['szoveg'].size=None
 
     layout['jatekter'].ratio=4
-    layout['statok'].ratio=1
+    layout['toolbar'].ratio=1
     layout['opciok'].ratio=1
     layout['szoveg'].ratio=2
 
-    # console.print(layout)
- 
-    with Live(layout, auto_refresh=False) as live:
-        x = get_terminal_size().lines
-        while True:
-            y = get_terminal_size().lines
+    # screen fele ures
+    layout['nothing'].update("")
+    return layout
+    
 
-            if x != y:
-                live.refresh()
-                x = y
+        
+        
 
+def update_layout(layout_name: str, renderable):
+    global layout
+    layout[layout_name].update(renderable)
 
+def update_opciok(opciok: list):
+    global layout
+    opciok_layout = Layout()
+    
+    for opcio in opciok:
+        opciok_layout.add_split(opcio)
 
-
-screen()
+    layout['opciok'].update(opciok_layout)
