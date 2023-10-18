@@ -3,7 +3,21 @@
         "Budapest": ["8 óra körül Budapest utcáinak hideg szele felébreszt... valami nem stimmel...", "Egyszer csak egy fiatal férfi odasétál hozzád, a kezedbe nyom egy levelet és a kalapodba tesz egy kis pénzt.", "Mire felfogod mi történt, a férfi már sehol sincs.", "Kinyitod a levelet és elolvasod a tartalmát: Kedves {nev}! Ha ezt olvasod, én már meghaltam. Egy távoli rokonod vagyok, Bécsben élek. Szeretném ha eljönnél a temetésemre. A temetés 3 nap múlva lesz, 15:00-kor. A bécsi vasútállomáson fogadni fognak. Jól esne ha hoznál egy csokor virágot is a síromra. Ha ezt megteszed, a család megjutalmaz. Köszönettel: Henry bácsi", "Ugyan már, ez csak egy átverés lehet, de azért elolvasod még egyszer a levelet.", "Közben megnézed a pénzt is, {penz} forintot találsz a kalapodban.", "Bár földrajzból nem voltál valami jó, tudod hogy Bécs gyalog elég messze van.", "Végül úgy döntesz, hogy elindulsz Bécsbe, mivel úgy sincs semmi vesztenivalód.", "Elsétálsz a Keleti pályaudvarra.", "Mikor belépsz az állomás hatalmas kapuin, körülnézel...", "Szemügyre veszed a menetrendet", "A következő vonat 14:00-kor indul Bécs felé."],
         "Tatabánya": [],
         "Győr": [],
-        "Bécs": []
+        "Bécs": {
+            "dancika": "",
+            "happy": "",
+            "borton": "",
+            "kitagadnak": {
+                "nincsVirag": "",
+                "nincsIdo": ""
+            },
+            "meghaltal": {
+                "ehseg": "",
+                "vonat": "",
+                "energia": "",
+                "suicide": ""
+            }
+        }
     },
 
     "eventek": {
