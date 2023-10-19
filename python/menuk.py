@@ -62,8 +62,8 @@ def mainLayout() -> Layout:
         Layout(name="szoveg")
     )
     layout['toolbar'].split_row(
-        Layout(name="statok"),
-        Layout(name="")
+        Layout(name="help"),
+        Layout(name="statok")
     )
 
     # Méretek
@@ -71,6 +71,7 @@ def mainLayout() -> Layout:
     layout['statok'].size=None
     layout['opciok'].size=None
     layout['szoveg'].size=None
+    
 
     layout['jatekter'].ratio=4
     layout['toolbar'].ratio=1
@@ -79,6 +80,11 @@ def mainLayout() -> Layout:
 
     # screen fele ures
     layout['nothing'].update("")
+    layout['game'].update("")
+    layout['help'].update("")
+    layout['szoveg'].update("")
+    layout['statok'].update("")
+
     return layout
     
 
@@ -92,8 +98,9 @@ def update_layout(layout_name: str, renderable):
 def update_opciok(opciok: list):
     global layout
     opciok_layout = Layout()
-    
+    i=1
     for opcio in opciok:
-        opciok_layout.add_split(opcio)
+        opciok_layout.add_split(f"{i}-{opcio}")
+        i+=1
 
     layout['opciok'].update(opciok_layout)
