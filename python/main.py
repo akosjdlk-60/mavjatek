@@ -44,6 +44,10 @@ async def hotkeys():
             case "f5":
                 refresh_screen()
 
+            case "esc":
+                asyncio.Task.cancel(hotkeys())
+                
+
     keyboard.on_release(print_pressed_keys, suppress=True)
 
 async def main():
@@ -76,10 +80,14 @@ async def main():
     global live
     with Live(layout, auto_refresh=False) as live:
         while True:
-            menuk.update_opciok(["ELSO", "mASOdik", "harmadik", "asd"])
+            
+            menuk.update_opciok(["ELSO", "mASOdik", "harmadik", "asd"], )
             refresh_screen()
             await waitforkey("space")
             menuk.update_layout("szoveg", Align.center("a kurva anyad", vertical="middle"))
+            # await asyncio.sleep(100)
+
+        
 
 
 

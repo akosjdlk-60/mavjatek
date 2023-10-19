@@ -6,7 +6,6 @@ from rich.live import Live
 from rich.layout import Layout
 import time
 from os import system as cmd
-from os import get_terminal_size
 
 
 console = Console(force_terminal=True)
@@ -79,11 +78,11 @@ def mainLayout() -> Layout:
     layout['szoveg'].ratio=2
 
     # screen fele ures
-    layout['nothing'].update("")
-    layout['game'].update("")
-    layout['help'].update("")
-    layout['szoveg'].update("")
-    layout['statok'].update("")
+    # layout['nothing'].update("")
+    # layout['game'].update("")
+    # layout['help'].update("")
+    # layout['szoveg'].update("")
+    # layout['statok'].update("")
 
     return layout
     
@@ -98,9 +97,12 @@ def update_layout(layout_name: str, renderable):
 def update_opciok(opciok: list):
     global layout
     opciok_layout = Layout()
+
     i=1
     for opcio in opciok:
         opciok_layout.add_split(f"{i}-{opcio}")
         i+=1
+    
+        
 
     layout['opciok'].update(opciok_layout)
