@@ -1,7 +1,7 @@
 # mavjatek
 - Backstory: Budapesten vagyunk és kapunk egy levelet hogy meghalt az egyik bécsi rokonunk. Szegények vagyunk de el akarunk jutni Bécsbe a temetésre ami holnap 15:00kor van.
 - Cél: Időben eljutni a temetésre, nem meghalni, venni egy virágot a sírra.
-- Plot twist: (20%) Komáromban leszállsz a vonatról, de nem figyelsz és elüt egy tehervonat.
+- Plot twist: (20%) Bécsben leszállsz a vonatról, de nem figyelsz és elüt egy tehervonat.
 - Statok: Energia(75-50), Telítettség(50-100), Pénz(0-250), Idő(08:00), Időjárás(napos)
 - Starter inventory: 1 sportszelet
 
