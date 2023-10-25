@@ -55,12 +55,11 @@
 ### Állomás menüpontok:
 - Séta a boltba
 - Futás a boltba
-- Vissza a vonatra
 - jegy vásárlás
 - Kisgyerek meglopása 100-250, 10% hogy lecsuknak
 - Öltönyös úriember meglopása 300-600, 40% hogy lecsuknak
 - kéregetés max. 100, állomásonként max 1x
-- vár x-ig
+- Vár x-ig, majd felszáll a vonatra
 
 ### Bolt menüpontok:
 - Energiaital vásárlás

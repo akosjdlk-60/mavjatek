@@ -34,13 +34,12 @@
         "allomas": {
             "seta": "Elsétálsz a boltba, majd körülnézel...",
             "futas": "Elfutsz a boltba és mikor odaérsz körülnézel...",
-            "felszallas": "Felszállsz a vonatra és leülsz egy szabad helyre...",
             "jegyVasarlas": "Odasétálsz az egyik jegyautomatához és vásárolsz egy jegyet a következő állomásig.",
             "lopasGyerek": ["Meglátsz egy kisgyereket és elállod az útját.", "A kezedet egy zacskóba dugod, és a gyereknek mutatod hogy azt higgye pisztoly van nálad.", "Ide az uzsipénzed, vagy lelövöm a fejed! - mondod a gyereknek.", "A kisgyerek megijed, és átadja a pénzét."],
             "lopasFerfi": ["Meglátsz egy öltönyös férfit és elállod az útját.", "A kezedet egy zacskóba dugod, és a férfinak mutatod hogy azt higgye pisztoly van nálad.", "Ide az pénzed, vagy lelövöm a fejed te rohadék! - ordítod a férfinak.", "A férfi megijed, és átadja a pénzét.", "Nyugalom, nem akarok meghalni! - mondja a férfi."],
             "elkapnak": ["Mikor el akarsz rohanni, a rendőrök meglátnak.", "Elkapnak, és börtönbe zárnak."],
             "keregetes": ["Odaállsz az egyik jegyautomata mellé és minden arra járó embertől pénzt kérsz.", "Végül összesen {penz} forintot szerzel."],
-            "varakozas:": "Leülsz egy padra és vársz a vonatodra."
+            "felszallas:": ["Leülsz egy padra és vársz a vonatodra.", "Felszállsz a vonatra és leülsz egy szabad helyre..."]
         },
         "vonat": {
             "indulas": "Elindul a vonat, és a hátad mögött már hallod az ellenőr hangját.",
