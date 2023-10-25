@@ -8,19 +8,19 @@
         "tatabanya": ["A vonat végre beáll a tatabányai állomásra.", "Eszedbe jut, hogy kellene venni egy újabb jegyet, de persze a bliccelés is egy lehetőség. Közben ránézel a vonatban feltűntetett menetrendre", "A vonat reggel 7:15-kor indul tovább Győr felé."],
         "gyor": ["A hosszú utazás kicsit megviselt, de a vonatod végre megérkezett a győri vasútállomásra.", "Megnézed a menetrendet és látod, hogy a vonatod 12:10-kor indul, immáron Bécsbe."],
         "becs": {
-            "erkezes": ["A vonatod végre megérkezik Bécsbe.", "Örömödben azonnal lepattansz a vonatról.", "Rájössz, hogy fogalmad sincs merre vagy, így megkérdezel egy embert, hogy hol van a temető.", "Mivel németül válaszol, így nem érted mit mond, de szerencsére ő viszont megértett téged.", "A kézjelzései alapján talán odatalálsz.", "Megköszönöd a segítségét és elindulsz."],
-            "gazdag": "",
-            "vonatElut": "",
-            "elkesett": "",
-            "viragNincs": "",
-            "kitagadnak": "",
-            "dancika": "",
-            "temetes": ["Mikor a család tagjai hallottak a halálodról, úgy döntöttek megszervezik a temetésed.", "Rájöttek, hogy van egy rokonod, aki Budapesten él", "Küldtek neki egy meghívót..."]
+            "erkezes": ["A vonatod végre megérkezik Bécsbe.", "Örömödben azonnal felpattansz a helyedről.", "Rájössz, hogy fogalmad sincs merre vagy, így megkérdezel egy embert, hogy hol van a temető.", "Mivel németül válaszol, így nem érted mit mond, de szerencsére ő viszont megértett téged.", "A kézjelzései alapján talán odatalálsz.", "Megköszönöd a segítségét és leszállsz a vonatról."],
+            "gazdag": ["...A temető bejáratánál már várakozik a család néhány tagja.", "Mikor meglátnak, odajönnek hozzád és megköszönik, hogy eljöttél.", "Kicsivel később a temetésen...", "A virágot odateszed a sírra, amit a család láthatóan értékel.", "Ugyan nem ismerted személyesen a halottat, de egy kicsit szomorú vagy.", "A temetés után Klára odajön hozzád.", "Még egyszer megköszöni a fáradságodat, majd átad neked egy borítékot.", "Rá van írva, hogy majd a temetés után nyisd ki.", "Megköszönöd a borítékot, majd elköszönsz a családtól.", "Kinyitod a borítékot és egy csekket találsz benne... 100 ezer euró értékben.", "Fel sem tudod fogni, mennyi pénz ez.", "Egy kis idő múlva elhatározod, hogy új életet kezdesz, itt Bécsben.", "Ugyan nem ismered a nyelvet, de majd belejössz.", "60 év múlva...", "A karosszékedben ülsz és érzed, hogy a vég közeledik.", "Szerencsére veled vannak az unokáid, így boldogan halhatsz meg...", "..."],
+            "elkesett": ["...A temető bejáratánál senkit nem találsz, így úgy döntesz bemész.", "Bent csak egy frissen betemetett sírt találsz és rajta egy levelet a neveddel, amiben ez áll:", "A családunkat mélységesen megbántottad azzal, hogy elkéstél. Mivel ennyire nem tiszelsz minket, úgy döntöttünk, hogy kitagadunk a családból. A temetés után ne is próbálj meg velünk kapcsolatba lépni. Klára"],
+            "viragNincs": ["...A temető bejáratánál már várakozik a család néhány tagja.", "Mikor meglátnak, odajönnek hozzád.", "Látják, hogy nincs nálad virág, így megkérdezik, hogy miért nincs.", "Miután nem tudsz előállni semmilyen értelmes magyarázattal, a megbántott családtagok kitagadnak a családból és elküldenek."],
+            "kitagadnak": ["Az események teljesen összetörtek téged.", "Ez volt az utolsó esélyed egy jobb élet reményében és te elszúrtad.", "Úgy érzed többé nincs céja az életednek.", "Visszaballagsz a vasútállomásra, majd végső elkeseredésedben a sínekre fekszel.", "Pont jön egy tehervonat...", "Meghaltál."],
+            "vonatElut": ["Mikor lelépsz a vonatról, megbotlasz és beesel a sínekre.", "Beütöd a fejed, így egy percre elkábulsz.", "Mikor felébredsz, már csak a vonatot látod, amint feléd tart...", "Meghaltál."],
+            "dancika": ["Mikor elvennéd az energiaitalt, hirtelen megjelenik melletted Varga Dani, és elkezdi szidni a Red Bull-t.", "Kiveri a kezedből az italt, ami szétrobban a földön.", "Elmondja, hogy az energiaital mennyire káros a szervezetnek és hogy milyen sok cukrot tartalmaz.", "Megfogja a kezed és elkísér a MÁV-os felfestésű repülő vonatjához.", "Felszálltok rá és elrepültök Bécsbe.", "Dani kitesz a temetőnél és mire megfordulsz, hogy elköszönj, sehol sem találod."],
+            "temetes": ["...Mikor a család tagjai hallottak a halálodról, úgy döntöttek megszervezik a temetésed.", "Rájöttek, hogy van egy rokonod, aki Budapesten él", "Küldtek neki egy meghívót..."]
         }
     },
     "eventek": {
         "varos": {
-            "rablas": ["Miközben a város utcáin sétálsz, egyszer csak egy kétes kinézetű férfi odalép hozzád.", "A férfi egy pisztolyt fog a fejedhez, és azt mondja: Add ide minden pénzed te csöves!", "Mivel nem akarsz meghalni, átadsz egy kis pénzt.", "Mivel a másik zsebedben is van pénz, ezért egy kicsit meg tudsz tartani.", "A férfi elszalad, te pedig tovább sétálsz."],
+            "rablas": ["A város utcáin egyszer csak egy kétes kinézetű férfi odalép hozzád.", "A férfi egy pisztolyt fog a fejedhez, és azt mondja: Add ide minden pénzed te csöves!", "Mivel nem akarsz meghalni, átadsz egy kis pénzt.", "Mivel a másik zsebedben is van pénz, ezért egy kicsit meg tudsz tartani.", "A férfi elszalad, te pedig szomorúan továbbmész."],
             "penz": ["Menet közben lenézel és találsz a földön {x} forintot", "Lehajolsz, felveszed, majd továbbmész."]
         },
         "vonat": {
@@ -38,7 +38,7 @@
             "jegyVasarlas": "Odasétálsz az egyik jegyautomatához és vásárolsz egy jegyet a következő állomásig.",
             "lopasGyerek": ["Meglátsz egy kisgyereket és elállod az útját.", "A kezedet egy zacskóba dugod, és a gyereknek mutatod hogy azt higgye pisztoly van nálad.", "Ide az uzsipénzed, vagy lelövöm a fejed! - mondod a gyereknek.", "A kisgyerek megijed, és átadja a pénzét."],
             "lopasFerfi": ["Meglátsz egy öltönyös férfit és elállod az útját.", "A kezedet egy zacskóba dugod, és a férfinak mutatod hogy azt higgye pisztoly van nálad.", "Ide az pénzed, vagy lelövöm a fejed te rohadék! - ordítod a férfinak.", "A férfi megijed, és átadja a pénzét.", "Nyugalom, nem akarok meghalni! - mondja a férfi."],
-            "elkapnak": ["Mikor el akarsz rohanni, a rendőrök meglátnak.", "Elkapnak, és börtönbe zárnak.", "GAME OVER"],
+            "elkapnak": ["Mikor el akarsz rohanni, a rendőrök meglátnak.", "Elkapnak, és börtönbe zárnak."],
             "keregetes": ["Odaállsz az egyik jegyautomata mellé és minden arra járó embertől pénzt kérsz.", "Végül összesen {penz} forintot szerzel."],
             "varakozas:": "Leülsz egy padra és vársz a vonatodra."
         },
@@ -47,14 +47,14 @@
             "blicceles": ["Mivel nem akarod, hogy megbüntessen, elbújsz a közeli WC-ben.", "Mikor kijössz, már nincs ott az ellenőr.", "Visszamész a helyedre."],
             "jegyVan": "Megmutatod a jegyedet az ellenőrnek. Leellenőrzi majd továbbmegy.",
             "jegyNincs": ["Amikor az ellenőr megkér, hogy mutasd meg a jegyedet, azt mondod neki, hogy nincs.", "Megkérdezi, hogy miért nincs, de nem tudsz mit mondani.", "Előveszi a csekkfüzetét és ráfirkál valamit.", "Letépi a csekket és a kezedbe nyomja", "Ránézel a csekkre, és látod, hogy {penz} forintot kell fizetned."],
-            "jegyNincsPenzNincs": ["Elmondod az ellenőrnek, hogy nincs nálad ennyi pénz, így ő hívja a rendőröket.", "Az ellenőr leszállít a vonatról, és a rendőrök börtönbe zárnak.", "GAME OVER"],
+            "jegyNincsPenzNincs": ["Elmondod az ellenőrnek, hogy nincs nálad ennyi pénz, így ő hívja a rendőröket.", "Az ellenőr leszállít a vonatról, és a rendőrök börtönbe zárnak."],
             "alvas": ["Melletted pont üres egy hely, így lefekszel és elalszol.", "Amikor felébredsz, körülnézel..."],
             "leszallas": "Leszállsz a vonatról és körülnézel..."
         },
         "bolt": {
             "vasarlas": "Veszel egy {targy}-t, ami {ar} forintba kerül.",
             "lopas": ["Úgy döntesz, hogy lopsz egy {targy}-t", "Vársz egy kicsit, majd mikor senki nem figyel rád, elrejted a kabátodban."],
-            "elkapnak": ["Mikor el akarsz rohanni, a eladó meglát.", "Az eladó hívja a rendőröket, akik elkapnak és börtönbe zárnak.", "GAME OVER"],
+            "elkapnak": ["Mikor el akarsz rohanni, a eladó meglát.", "Az eladó hívja a rendőröket, akik elkapnak és börtönbe zárnak."],
             "seta": "Elsétálsz az állomásra, majd körülnézel...",
             "futas": "Elfutsz az állomásra és mikor odaérsz körülnézel..."
         }
