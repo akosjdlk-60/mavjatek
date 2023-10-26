@@ -3,7 +3,6 @@ body {
     margin: 0;
     background: rgb(2,0,36);
     background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(52,52,71,1) 83%);
-    overflow-x: hidden;
 }
 
 header {
@@ -160,17 +159,24 @@ background: #7d7ff1;
 background: #e4e4e4;
 }
 
-@media only screen and (max-width: 300px) {
-    #only-large {
-        display: none;
+@media only screen and (max-width: 400px) {
+    .pfp {
+        width: 325px;
+        height: 420px;
+    }
+
+    iframe {
+        width:90%;
+        height:400px;
     }
 }
 
-@media  screen and (max-width: 1000px) {
+@media only screen and (max-width: 1000px) {
     .dev-img-l {
-        width: 400px;
+        width: 300px;
     }
+    
     .dev-img-s {
-        width: 400px;
+        width: 300px;
     }
 }
