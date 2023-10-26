@@ -3,6 +3,7 @@ body {
     margin: 0;
     background: rgb(2,0,36);
     background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(52,52,71,1) 83%);
+    overflow-x: hidden;
 }
 
 header {
@@ -105,7 +106,7 @@ h1 {
 
 #jojatekot:hover {
     color: burlywood;
-    scale: 1.02;
+    transform: translate(0px, -10px);
 }
 
 #dev {
@@ -116,14 +117,21 @@ h1 {
     cursor: default;
 }
 
-.dev-img {
+.dev-img-l {
     width: 1000px;
     border: 2px solid white;
     border-radius: 5px;
     transition: 0.3s;
 }
 
-.dev-img:hover {
+.dev-img-s {
+    width: 650px;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.dev-img-l:hover, .dev-img-s:hover {
     box-shadow: 10px 20px 1px black;
     transform: translate(0px, -10px);
 }
@@ -155,5 +163,14 @@ background: #e4e4e4;
 @media only screen and (min-width: 600px) {
     #only-large {
         display: none;
+    }
+}
+
+@media  screen and (max-width: 1000px) {
+    .dev-img-l {
+        width: 400px;
+    }
+    .dev-img-s {
+        width: 400px;
     }
 }

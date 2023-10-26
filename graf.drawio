@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-10-25T12:01:24.764Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="TCTcC7BRW-pBVydtEiMs" version="22.0.8" type="device">
+<mxfile host="app.diagrams.net" modified="2023-10-26T07:51:26.712Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="Kvi_sduChlev1HIdi1D_" version="22.0.8" type="device">
   <diagram name="1 oldal" id="HCi74r8AC1qW8FaivY9Q">
-    <mxGraphModel dx="1420" dy="744" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10000" pageHeight="10000" background="#343447" math="0" shadow="0">
+    <mxGraphModel dx="3190" dy="1673" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="10000" pageHeight="10000" background="#343447" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -197,7 +197,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="XL5i5x2tit-ejIarr1dZ-53" value="Új életet kezdek Bécsben, 60 év múlva idős koromban meghalok" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#4E8F04;fontColor=#FFFFFF;gradientColor=none;fontStyle=0" parent="1" vertex="1">
-          <mxGeometry x="410" y="1220" width="120" height="60" as="geometry" />
+          <mxGeometry x="392" y="1218" width="156" height="64" as="geometry" />
         </mxCell>
         <mxCell id="XL5i5x2tit-ejIarr1dZ-65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;strokeColor=#FFFFFF;fontStyle=0" parent="1" source="XL5i5x2tit-ejIarr1dZ-63" target="BgKfAN9wwZw_LsV1WhNB-29" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -218,8 +218,7 @@
               <mxPoint x="360" y="550" />
               <mxPoint x="360" y="520" />
               <mxPoint x="470" y="520" />
-              <mxPoint x="470" y="600" />
-              <mxPoint x="520" y="600" />
+              <mxPoint x="470" y="605" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -274,6 +273,18 @@
         </mxCell>
         <mxCell id="9l9e1cgc8zWlbj96KdlX-11" value="&lt;font color=&quot;#ffffff&quot; style=&quot;font-size: 15px;&quot;&gt;- Event&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontStyle=0" parent="1" vertex="1">
           <mxGeometry x="229" y="384" width="169" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="vFkqJjNcWbLbNA4juhbP-1" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#343447;" vertex="1" parent="1">
+          <mxGeometry x="1276" y="635" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vFkqJjNcWbLbNA4juhbP-2" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#343447;" vertex="1" parent="1">
+          <mxGeometry x="432" y="1449" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vFkqJjNcWbLbNA4juhbP-3" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#343447;" vertex="1" parent="1">
+          <mxGeometry x="-419" y="640" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vFkqJjNcWbLbNA4juhbP-4" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#343447;" vertex="1" parent="1">
+          <mxGeometry x="338" y="-79" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
