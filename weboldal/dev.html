@@ -20,12 +20,33 @@
         <div class="dev-sect">
             <h2>Dialogues</h2>
             <p>A dialógusok túl hosszúnak bizonyultak, így úgy döntöttünk, hogy egy külön JSON fájlba írjuk őket.</p>
-            <img class="dev-img-l" src="images/dialogues1.png" alt="dialogues" title="Dialogues">
+            <img class="dev-img-l" src="images/dialogues1.png" alt="dialogues" title="Dialogues JSON">
             <p>Így lehetőségünk nyílt egyéb funkciókra, mint például a karakterenkénti kiírás.</p>
             <img class="dev-img-s" src="images/dialogues2.gif" alt="dialogues" title="Animated Dialogues">
         </div>
         <div class="dev-sect">
+            <h2>Python</h2>
+            <div class="sect">
+                <h4>Requirements</h4>
+                <p style="margin: 0;">A fejlesztés során felhasznált és játék futtatásához szükséges <b style="background-color: rgba(0, 0, 0, 0.5); padding: 3px;">pip csomagok:</b></p>
+                <ul style="display: inline-block; text-align: left;">
+                    <li><a href="https://pypi.org/project/rich/" target="_blank">rich</a></li>
+                    <li><a href="https://pypi.org/project/keyboard/" target="_blank">keyboard</a></li>
+                    <li><a href="https://pypi.org/project/asyncio/" target="_blank">asyncio</a></li>
+                </ul>
+            </div>
 
+            <div class="sect">
+                <h4>Idő</h4>
+                <p>Az idő a játék során folyamatosan telik, tetteinkkel pedig tovább gyorsítjuk (vagy lassítjuk) azt.</p>
+                <img class="dev-img-s" src="images/ido.png" alt="ido_code" title="Az időt szolgáltató kód">
+            </div>
+
+            <div class="sect">
+                <h4>Layout</h4>
+                <p>A <b>rich</b> librarynek köszönhetően a játék grafikai felépítése<br>egy táblázat alapú rendszerben készült, amit a terminál folyamatosan frissít.</p>
+                <img class="dev-img-s" src="images/layout.png" alt="layout_code" title="A layoutot szolgáltató kód">
+            </div>
         </div>
     </div>
 </body>
