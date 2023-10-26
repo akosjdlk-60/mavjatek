@@ -160,7 +160,7 @@ background: #7d7ff1;
 background: #e4e4e4;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 300px) {
     #only-large {
         display: none;
     }
