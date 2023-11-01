@@ -1,6 +1,8 @@
 import json
+import os
 
-with open("dialogues.json", "r", encoding="utf-8") as f:
+path = f"{os.path.abspath(os.getcwd())}\\"
+with open(f"{path}dialogues.json", "r", encoding="utf-8") as f:
     dialogues = json.load(f)
 
 

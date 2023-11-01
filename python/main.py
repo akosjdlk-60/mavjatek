@@ -2,23 +2,17 @@ import random
 import datetime
 from time import sleep
 import os
-import json
+
 import asyncio
-
-from rich.console import Console
-from rich.live import Live
-from rich.align import Align
-
-import menuk
 import keyboard
 
-console = Console()
+from rich.align import Align
+from rich.text import Text
 
-with open("dialogues.json", "r", encoding="utf-8") as f:
-    x = f.read()
-    dialogues = json.loads(x)
-    # print(str(dialogues["story"]["Bécs"]["dancika"]).format(nev="Akos"))
-    
+import menuk
+import dialogue_parser as parser
+
+keyboard.press('f11')
 
 async def waitforkey(key: list | str | int) -> str | None:
     """
@@ -28,6 +22,9 @@ async def waitforkey(key: list | str | int) -> str | None:
     """
     while True:
         event = keyboard.read_event(suppress=True)
+        if event.name == "esc":
+            break
+        
         if type(key) == list:
             for i in range(len(key)):
                 if event.name == key[i]:
@@ -36,36 +33,34 @@ async def waitforkey(key: list | str | int) -> str | None:
             return None
 
 async def hotkeys():
-    def print_pressed_keys(e: keyboard.KeyboardEvent):
-        print(e.name)
-
+    def pressed_key(e: keyboard.KeyboardEvent):
         match e.name:
 
-            case "f5":
-                refresh_screen()
+            case "r":
+                return
 
             case "esc":
-                asyncio.Task.cancel(hotkeys())
+                menuk.live.stop()
+                exit(0)
+
                 
 
-    keyboard.on_release(print_pressed_keys, suppress=True)
+    keyboard.on_release(pressed_key, suppress=True)
 
 async def main():
     asyncio.create_task(hotkeys())
-    await asyncio.sleep(0)
+    await asyncio.sleep(0.01)
+    asyncio.create_task(menuk.clock())
+    await asyncio.sleep(0.01)
 
-    os.system("cls")
     global statok
     global inventory
     
-
     statok = {
         "penz": random.randint(0,250),
         "kaja": random.randint(50,100),
         "energia": random.randint(75,90),
-        "ido": datetime.time(8,0).strftime("%H:%M"),
         "varos": "Budapest",
-        "idojaras": "Napos",
         "rozsa": False,
         "jegy": False
     }
@@ -76,23 +71,33 @@ async def main():
         "Energiaital": 0
     }
 
-    layout = menuk.mainLayout()
-    global live
-    with Live(layout, auto_refresh=False) as live:
-        while True:
-            
-            menuk.update_opciok(["ELSO", "mASOdik", "harmadik", "asd"], )
-            refresh_screen()
-            await waitforkey("space")
-            menuk.update_layout("szoveg", Align.center("a kurva anyad", vertical="middle"))
-            # await asyncio.sleep(100)
-
+    global layout
+    layout = menuk.ResetLayout()
+    menuk.helper()
+    menuk.update_stats(statok, inventory)
+    menuk.live.start()
+    while True:
         
+        
+        szovegz = []; i:str
+        for i in parser.read('eventek varos penz'):
+            x=random.choices(population=(20, 50, 100, 200, 500), weights=(5,4,3,2,1))
+            szovegz.append(i.format(x=x[0]))
+        statok["penz"] += x[0]
+        menuk.update_stats(statok, inventory)
+        await print_szoveg(szovegz)
+                
 
+async def print_szoveg(renderable: list):
+    global layout
+    for i in range(len(renderable)):
+        string = ""
+        for j in range(len(renderable[i])):
+            string += renderable[i][j]
+            layout['szoveg'].update(Align(string, "center", vertical="middle"))
+            await asyncio.sleep(0.01)
+        await waitforkey("space")
 
-
-def refresh_screen():
-    live.refresh()
 
 
 asyncio.run(main())
