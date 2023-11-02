@@ -35,7 +35,7 @@
             "seta": "Elsétálsz a boltba, majd körülnézel...",
             "futas": "Elfutsz a boltba és mikor odaérsz körülnézel...",
             "jegyVasarlas": "Odasétálsz az egyik jegyautomatához és vásárolsz egy jegyet a következő állomásig.",
-            "jegyVasarlasNincsPenz": "Odasétálsz az egyik jegyautomatához, hogy vegyél egy jegyet, ám feltűnik hogy nincs elég pénzed....",
+            "jegyVasarlasPenzNincs": "Odasétálsz az egyik jegyautomatához, hogy vegyél egy jegyet, ám feltűnik hogy nincs elég pénzed...",
             "lopasGyerek": ["Meglátsz egy kisgyereket és elállod az útját.", "A kezedet egy zacskóba dugod, és a gyereknek mutatod hogy azt higgye pisztoly van nálad.", "Ide az uzsipénzed, vagy lelövöm a fejed! - mondod a gyereknek.", "A kisgyerek megijed, és átadja a pénzét."],
             "lopasFerfi": ["Meglátsz egy öltönyös férfit és elállod az útját.", "A kezedet egy zacskóba dugod, és a férfinak mutatod hogy azt higgye pisztoly van nálad.", "Ide az pénzed, vagy lelövöm a fejed te rohadék! - ordítod a férfinak.", "A férfi megijed, és átadja a pénzét.", "Nyugalom, nem akarok meghalni! - mondja a férfi."],
             "elkapnak": ["Mikor el akarsz rohanni, a rendőrök meglátnak.", "Elkapnak, és börtönbe zárnak."],
