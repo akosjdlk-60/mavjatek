@@ -175,7 +175,7 @@ async def allomas_menu() -> str:
         case 2:
             await print_szoveg(read("menu allomas futas"))
             add_time(30)
-            return "statok"
+            return "bolt"
         
         case 3:
             eleg = statok["penz"] >= jegy_ar
@@ -206,13 +206,14 @@ async def allomas_menu() -> str:
         case 6:
             lop_osszeg = randint(100, 250)
             await print_szoveg(read("menu allomas lopasFerfi"), False, penz=lop_osszeg)
-            if choices(["lecsuktak", lop_osszeg], weights=[10000, 1])[0] == "lecsuktak":
+            if choices(["lecsuktak", lop_osszeg], weights=[40, 100])[0] == "lecsuktak":
                 await print_szoveg(read("menu allomas elkapnak"), False)
                 await print_szoveg(["Lecsuktak, Game Over"], False)
                 keyboard.send(hotkey='alt+f4')
 
         case 7:
-            pass
+            keregetes_osszeg = randint(100, 250)
+            
 
         case 8:
             pass
@@ -331,3 +332,4 @@ async def print_szoveg(szovegz: list, tovabb: bool, **kwargs):
 
 
 live = Live(layout, auto_refresh=True, refresh_per_second=120)
+

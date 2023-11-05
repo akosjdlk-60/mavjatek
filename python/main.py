@@ -66,13 +66,3 @@ async def main():
 
 
 asyncio.run(main())
-
-"""
-szovegz = []; i:str
-for i in parser.read('eventek varos penz'):
-    x=random.choices(population=(20, 50, 100, 200, 500), weights=(5,4,3,2,1))
-    szovegz.append(i.format(x=x[0]))
-statok["penz"] += x[0]
-menuk.update_stats(statok, inventory)
-await print_szoveg(szovegz)
-"""
