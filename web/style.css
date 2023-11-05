@@ -40,6 +40,7 @@ iframe:hover {
 
 a {
     text-decoration: none;
+    color: white;
 }
 
 h1 {
@@ -80,6 +81,12 @@ h1 {
 .pfp-desc {
     font-size: 20px;
     padding: 15px;
+}
+
+.outline {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 3px;
+    font-weight: bold;
 }
 
 #cards {
