@@ -6,7 +6,7 @@ with open(f"{path}dialogues.json", "r", encoding="utf-8") as f:
     dialogues = json.load(f)
 
 
-def read(input: str): #input = "meghalt ehseg"
+def read(input: str) -> list: #input = "meghalt ehseg"
     output = dialogues
     x= input.split(" ")
     for key in x:
