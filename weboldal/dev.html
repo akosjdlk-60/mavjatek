@@ -16,19 +16,21 @@
     </header>
     <div id="dev">
         <h1>Development</h1>
-        <p>Itt találhatóak a fejlesztői dokumentációk.</p>
+        <p>Itt találhatóak a fejlesztői dokumentációk.<br><i style="font-size: large;">*A képek a fejlesztés során készültek, így azok nem feltétlen tükrözik a játék jelenlegi forráskódját.</i></p>
         <div class="dev-sect">
             <h2>Dialogues</h2>
             <p>A dialógusok túl hosszúnak bizonyultak, így úgy döntöttünk, hogy egy külön JSON fájlba írjuk őket.</p>
             <img class="dev-img-l" src="images/dialogues1.png" alt="dialogues" title="Dialogues JSON">
             <p>Így lehetőségünk nyílt egyéb funkciókra, mint például a karakterenkénti kiírás.</p>
             <img class="dev-img-s" src="images/dialogues2.gif" alt="dialogues" title="Animated Dialogues">
+            <p>Az efajta animációkkal az a probléma, hogy a <span class="outline">Windows CMD</span> nem tudja őket szépen kivitelezni.</p><p>Ezért a modernebb <a style="text-decoration: underline;" href="https://apps.microsoft.com/detail/windows-terminal/9N0DX20HK701?hl=en-US&gl=US" target="_blank" class="outline">Windows Terminal</a>-t használtuk helyette, ami már képes erre.</p>
+            <img class="dev-img-s" style="width: 300px; border: none;" src="images/WT.png" alt="windows terminal icon" title="A Windows Terminal ikonja">
         </div>
         <div class="dev-sect">
             <h2>Python</h2>
             <div class="sect">
                 <h4>Requirements</h4>
-                <p style="margin: 0;">A fejlesztés során felhasznált és játék futtatásához szükséges <b style="background-color: rgba(0, 0, 0, 0.5); padding: 3px;">pip csomagok:</b></p>
+                <p style="margin: 0;">A fejlesztés során felhasznált és játék futtatásához szükséges <span class="outline">pip csomagok:</span></p>
                 <ul style="display: inline-block; text-align: left;">
                     <li><a href="https://pypi.org/project/rich/" target="_blank">rich</a></li>
                     <li><a href="https://pypi.org/project/keyboard/" target="_blank">keyboard</a></li>
@@ -44,7 +46,7 @@
 
             <div class="sect">
                 <h4>Layout</h4>
-                <p>A <b>rich</b> librarynek köszönhetően a játék grafikai felépítése<br>egy táblázat alapú rendszerben készült, amit a terminál folyamatosan frissít.</p>
+                <p>A <b>rich</b> librarynek köszönhetően a játék grafikai felépítése<br>egy táblázat alapú rendszerben készült, amelyet a terminál folyamatosan frissít.</p>
                 <img class="dev-img-s" src="images/layout.png" alt="layout_code" title="A layoutot szolgáltató kód">
             </div>
         </div>
