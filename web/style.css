@@ -7,6 +7,8 @@ body {
 
 header {
     border-radius: 10px;
+    border-top-right-radius: 1px;
+    border-top-left-radius: 1px;
     top: 20px;
     position: sticky;
     text-align: center;
@@ -47,6 +49,11 @@ a {
     color: white;
 }
 
+.arrow {
+    filter: invert();
+    width: 40px;
+}
+
 h1 {
     text-align: center;
     margin-top: 20px;
@@ -74,7 +81,7 @@ h1 {
 
 .pfp {
     width: 410px;
-    height: 540px;
+    height: 530px;
 }
 
 .pfp-name {
