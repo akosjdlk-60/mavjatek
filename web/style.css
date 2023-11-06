@@ -69,8 +69,8 @@ h1 {
 }
 
 .pfp {
-    width: 415px;
-    height: 550px;
+    width: 410px;
+    height: 540px;
 }
 
 .pfp-name {
@@ -180,7 +180,7 @@ background: #7d7ff1;
 background: #e4e4e4;
 }
 
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 412px) {
     .pfp {
         width: 300px;
         height: 400px;
