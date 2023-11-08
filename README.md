@@ -1,3 +1,5 @@
+# A játékot a !run.bat file-lal lehet elindítani!
+
 # MÁV Játék
 - Backstory: Budapesten vagyunk és kapunk egy levelet hogy meghalt az egyik bécsi rokonunk. Szegények vagyunk de el akarunk jutni Bécsbe a temetésre ami holnap 15:00kor van.
 - Cél: Időben eljutni a temetésre, nem meghalni, venni egy virágot a sírra.

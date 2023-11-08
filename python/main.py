@@ -3,14 +3,15 @@ import datetime
 from time import sleep
 import os
 
+
 import asyncio
 import keyboard
 
 from rich.align import Align
 from rich.text import Text
 
-import menuk
-from dialogue_parser import read
+import python.menuk as menuk
+from python.dialogue_parser import read
 
 
 async def waitforkey(key: list | str) -> str | None:
@@ -63,6 +64,3 @@ async def main():
         
         
 
-
-
-asyncio.run(main())

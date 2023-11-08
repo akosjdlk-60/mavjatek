@@ -1,5 +1,5 @@
 from rich.table import Table
-from rich.style import Style
+from rich.padding import Padding
 from rich.live import Live
 from rich.layout import Layout
 from rich.align import Align
@@ -11,8 +11,16 @@ import os
 import keyboard
 import asyncio
 from random import randint, choices
-from dialogue_parser import read
+from python.dialogue_parser import read
 import random
+
+
+
+"""
+TODO:
+import multiprocessing -> waitforkey
+https://www.dataleadsfuture.com/combining-multiprocessing-and-asyncio-in-python-for-performance-boosts/#use-asyncio%E2%80%99s-runinexecutor-to-fix-it
+"""
 
 def update_opciok(opciok: list):
     global layout
@@ -96,7 +104,7 @@ def ResetLayout() -> Layout:
         Layout(name="game"),
         Layout(name="nothing")
     ) 
-    layout['game'].ratio = 1
+    layout['game'].ratio = 2
     layout['nothing'].ratio = 1
 
     
@@ -134,6 +142,8 @@ def ResetLayout() -> Layout:
     layout["opciok"].update("")
     layout["help"].update("")
     
+    
+    
     return layout
 
 
@@ -154,7 +164,7 @@ def update_opciok(opciok: list):
         table.add_row(Text(f"{i} - {opcio}"))
         i+=1
     
-    layout['opciok'].update(table)
+    layout['opciok'].update(Padding(table, 20))
 
 
 async def allomas_menu() -> str:
@@ -168,29 +178,29 @@ async def allomas_menu() -> str:
     match x:
         
         case 1:
-            await print_szoveg(read("menu allomas seta"))
+            await print_szoveg(read("menu allomas seta"), True)
             add_time(60)
             return "bolt"
         
         case 2:
-            await print_szoveg(read("menu allomas futas"))
+            await print_szoveg(read("menu allomas futas"), True)
             add_time(30)
             return "bolt"
         
         case 3:
             eleg = statok["penz"] >= jegy_ar
             if eleg:
-                await print_szoveg(read("menu allomas jegyVasarlas"), )
+                await print_szoveg(read("menu allomas jegyVasarlas"), True)
                 statok["penz"] -= jegy_ar
                 statok["jegy"] = True
                 return "allomas"
             
             else:
-                await print_szoveg(read("menu allomas jegyVasarlasNincsPenz"))
+                await print_szoveg(read("menu allomas jegyVasarlasNincsPenz"), True)
                 return "allomas"
         
         case 4:
-            await print_szoveg(read("menu allomas felszallas"))
+            await print_szoveg(read("menu allomas felszallas"), True)
             set_time(kovetkezo_vonat[0], kovetkezo_vonat[1])
             return "vonat"
         
@@ -198,8 +208,8 @@ async def allomas_menu() -> str:
             lop_osszeg = randint(100, 250)
             await print_szoveg(read("menu allomas lopasGyerek"), False, penz=lop_osszeg)
             if choices(["lecsuktak", lop_osszeg], weights=[10, 100])[0] == "lecsuktak":
-                await print_szoveg(read("menu allomas elkapnak"))
-                await print_szoveg(["Lecsuktak, Game Over", " "])
+                await print_szoveg(read("menu allomas elkapnak"), False)
+                await print_szoveg(["Lecsuktak, Game Over"], False)
                 keyboard.send(hotkey='alt+F4')
                 
             
