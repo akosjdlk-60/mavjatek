@@ -1,14 +1,23 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 20px;
-    background: rgb(2,0,36);
-    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(52,52,71,1) 83%);
+    background: rgb(2, 0, 36);
+    background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(52, 52, 71, 1) 83%);
 }
 
-header {
+nav {
+    border-radius: 10px;
+    border-top-right-radius: 1px;
+    border-top-left-radius: 1px;
+    top: 0;
+    position: sticky;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.14);
+    margin: 0 auto;
+    width: 65%;
+    background-color: rgb(58, 59, 102);
     padding: 10px 0;
+    z-index: 10;
+    box-shadow: 0px 5px 5px black;
 }
 
 iframe {
@@ -17,8 +26,8 @@ iframe {
     margin: 0 auto;
     display: block;
     transition: 0.4s;
-    width:50%;
-    height:700px;
+    width: 50%;
+    height: 700px;
 }
 
 iframe:hover {
@@ -26,7 +35,6 @@ iframe:hover {
 }
 
 .a {
-    color: rgb(148, 135, 222);
     font-size: 30px;
     transition: 0.3s;
     margin: 10px;
@@ -34,13 +42,18 @@ iframe:hover {
 }
 
 .a:hover {
-    color: rgb(255, 255, 255);
+    color: rgb(179, 179, 179);
     margin: 0 35px 0 35px;
 }
 
 a {
     text-decoration: none;
     color: white;
+}
+
+.arrow {
+    filter: invert();
+    width: 40px;
 }
 
 h1 {
@@ -69,8 +82,8 @@ h1 {
 }
 
 .pfp {
-    width: 415px;
-    height: 550px;
+    width: 410px;
+    height: 530px;
 }
 
 .pfp-name {
@@ -96,7 +109,7 @@ h1 {
 
 #index-text {
     text-align: center;
-    margin-top: 150px;
+    margin-top: 80px;
     font-size: 30px;
     font-weight: 600;
     color: white;
@@ -108,11 +121,6 @@ h1 {
     color: white;
     font-weight: 700;
     transition: 0.5s;
-}
-
-#jojatekot:hover {
-    color: burlywood;
-    transform: translate(0px, -10px);
 }
 
 #dev {
@@ -133,7 +141,7 @@ h1 {
     transform: translate(0px, -10px);
 }
 
-.sect {
+section {
     background-color: rgba(0, 0, 0, 0.3);
     padding-bottom: 20px;
     border: 0px solid transparent;
@@ -150,13 +158,44 @@ h1 {
     margin-top: 20px;
 }
 
-.dev-img-l:hover, .dev-img-s:hover {
+.dev-img-l:hover,
+.dev-img-s:hover,
+.date:hover+.dev-img-l,
+.date:hover+.dev-img-s {
     box-shadow: 6px 6px 5px black;
     transform: translate(0px, 0px);
 }
 
+.date-img:hover .date,
+.date:hover {
+    opacity: 1;
+    transform: translate(0px, 10px);
+}
+
+.date {
+    position: absolute;
+    bottom: 20px;
+    right: 2px;
+    cursor: default;
+    transition: 0.3s;
+    z-index: 8;
+    font-size: 23px;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    font-weight: bold;
+}
+
+.date-img {
+    margin: auto;
+    position: relative;
+    width: fit-content;
+}
+
 .dev-sect {
     margin-top: 80px;
+    margin-bottom: 80px;
 }
 
 li a {
@@ -165,30 +204,35 @@ li a {
 }
 
 ::-webkit-scrollbar {
-width: 15px;
+    width: 15px;
 }
 
 ::-webkit-scrollbar-track {
-background: #53308a;
+    background: #53308a;
 }
 
 ::-webkit-scrollbar-thumb {
-background: #7d7ff1;
+    background: #7d7ff1;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.5), 0 -6px 6px rgba(0, 0, 0, 0.5);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-background: #e4e4e4;
+    background: #5e5e5e;
 }
 
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 412px) {
     .pfp {
         width: 300px;
         height: 400px;
     }
 
     iframe {
-        width:90%;
-        height:400px;
+        width: 90%;
+        height: 400px;
+    }
+
+    nav {
+        width: 100%;
     }
 }
 
@@ -196,7 +240,7 @@ background: #e4e4e4;
     .dev-img-l {
         width: 300px;
     }
-    
+
     .dev-img-s {
         width: 300px;
     }

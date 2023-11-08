@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,49 +8,73 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="https://www.mavcsoport.hu/sites/all/themes/mav/images/favicon.ico">
 </head>
+
 <body>
-    <header>
+    <nav>
         <a class="a" href="index.html">Kezdőlap</a>
         <a class="a" href="keszitok.html">Készítők</a>
         <a class="a" href="graf.html">Gráf</a>
         <a class="a" href="#">Development</a>
-    </header>
+    </nav>
     <div id="dev">
-        <h1>Development</h1>
-        <p>Itt találhatóak a fejlesztői dokumentációk.<br><i style="font-size: large;">*A képek a fejlesztés során készültek, így azok nem feltétlen tükrözik a játék jelenlegi forráskódját.</i></p>
+        <h1>- Development -</h1>
+        <p>Itt találhatóak a fejlesztői dokumentációk.<br><i style="font-size: large;">*A képek a fejlesztés során
+                készültek, így azok nem feltétlen tükrözik a játék jelenlegi forráskódját.</i></p>
         <div class="dev-sect">
-            <h2>Dialogues</h2>
-            <p>A dialógusok túl hosszúnak bizonyultak, így úgy döntöttünk, hogy egy külön JSON fájlba írjuk őket.</p>
-            <img class="dev-img-l" src="images/dialogues1.png" alt="dialogues" title="Dialogues JSON">
-            <p>Így lehetőségünk nyílt egyéb funkciókra, mint például a karakterenkénti kiírás.</p>
-            <img class="dev-img-s" src="images/dialogues2.gif" alt="dialogues" title="Animated Dialogues">
-            <p>Az efajta animációkkal az a probléma, hogy a <span class="outline">Windows CMD</span> nem tudja őket szépen kivitelezni.</p><p>Ezért a modernebb <a style="text-decoration: underline;" href="https://apps.microsoft.com/detail/windows-terminal/9N0DX20HK701?hl=en-US&gl=US" target="_blank" class="outline">Windows Terminal</a>-t használtuk helyette, ami már képes erre.</p>
-            <img class="dev-img-s" style="width: 300px; border: none;" src="images/WT.png" alt="windows terminal icon" title="A Windows Terminal ikonja">
-        </div>
-        <div class="dev-sect">
-            <h2>Python</h2>
-            <div class="sect">
+            <h2>- Python -</h2>
+            <section>
                 <h4>Requirements</h4>
-                <p style="margin: 0;">A fejlesztés során felhasznált és játék futtatásához szükséges <span class="outline">pip csomagok:</span></p>
+                <p style="margin: 0;">A fejlesztés során felhasznált és játék futtatásához szükséges <span
+                        class="outline">pip csomagok:</span></p>
                 <ul style="display: inline-block; text-align: left;">
                     <li><a href="https://pypi.org/project/rich/" target="_blank">rich</a></li>
                     <li><a href="https://pypi.org/project/keyboard/" target="_blank">keyboard</a></li>
                     <li><a href="https://pypi.org/project/asyncio/" target="_blank">asyncio</a></li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="sect">
-                <h4>Idő</h4>
-                <p>Az idő a játék során folyamatosan telik, tetteinkkel pedig tovább gyorsítjuk (vagy lassítjuk) azt.</p>
-                <img class="dev-img-s" src="images/ido.png" alt="ido_code" title="Az időt szolgáltató kód">
-            </div>
-
-            <div class="sect">
+            <section>
                 <h4>Layout</h4>
-                <p>A <b>rich</b> librarynek köszönhetően a játék grafikai felépítése<br>egy táblázat alapú rendszerben készült, amelyet a terminál folyamatosan frissít.</p>
-                <img class="dev-img-s" src="images/layout.png" alt="layout_code" title="A layoutot szolgáltató kód">
-            </div>
+                <p>A <b>rich</b> librarynek köszönhetően a játék grafikai felépítése<br>egy táblázat alapú rendszerben
+                    készült, amelyet a terminál folyamatosan frissít.</p>
+                <div class="date-img">
+                    <div class="date" title="A kép készültének dátuma">~ 2023. 10. 19.</div>
+                    <img class="dev-img-s" src="images/layout.png" alt="layout_code" title="A layoutot szolgáltató kód">
+                </div>
+            </section>
+
+            <section>
+                <h4>Idő</h4>
+                <p>Az idő a játék során folyamatosan telik, tetteinkkel pedig tovább gyorsítjuk (vagy lassítjuk) azt.
+                </p>
+                <div class="date-img">
+                    <div class="date" title="A kép készültének dátuma">~ 2023. 10. 25.</div>
+                    <img class="dev-img-s" src="images/ido.png" alt="ido_code" title="Az időt szolgáltató kód">
+                </div>
+            </section>
+
+        </div>
+        <div class="dev-sect">
+            <h2>- Dialogues -</h2>
+            <p>A dialógusok túl hosszúnak bizonyultak, így úgy döntöttünk, hogy egy külön JSON fájlba írjuk őket.</p>
+            <p><img src="images/arrow.png" class="arrow" alt=""></p>
+            <img class="dev-img-l" src="images/dialogues1.png" alt="dialogues" title="Dialogues JSON">
+            <p>Így lehetőségünk nyílt egyéb funkciókra, mint például a karakterenkénti kiírás.</p>
+            <p><img src="images/arrow.png" class="arrow" alt=""></p>
+            <img class="dev-img-s" src="images/dialogues2.gif" alt="dialogues" title="Animated Dialogues">
+            <p>Az efajta animációkkal az a probléma, hogy a <span class="outline">Windows CMD</span> nem tudja őket
+                szépen kivitelezni.</p>
+            <p><img src="images/arrow.png" class="arrow" alt=""></p>
+            <img class="dev-img-s" src="images/dialogues3.gif" alt="dialogues" title="Animated Dialogues">
+            <p>Ezért a modernebb <a style="text-decoration: underline;"
+                    href="https://apps.microsoft.com/detail/windows-terminal/9N0DX20HK701?hl=en-US&gl=US"
+                    target="_blank" class="outline">Windows Terminal</a>-t használtuk helyette, ami már képes erre.</p>
+            <p><img src="images/arrow.png" class="arrow" alt=""></p>
+            <a href="https://apps.microsoft.com/detail/windows-terminal/9N0DX20HK701?hl=en-US&gl=US"
+                target="_blank"><img class="dev-img-s" style="width: 300px; border: none;" src="images/WT.png"
+                    alt="windows terminal icon" title="Windows Terminal"></a>
         </div>
     </div>
 </body>
+
 </html>
