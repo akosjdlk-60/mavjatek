@@ -1,7 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 20px;
-    background: rgb(2, 0, 36);
     background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(52, 52, 71, 1) 83%);
 }
 
@@ -118,7 +117,6 @@ h1 {
 
 #jojatekot {
     font-size: 48px;
-    color: white;
     font-weight: 700;
     transition: 0.5s;
 }
@@ -203,6 +201,20 @@ li a {
     text-decoration: underline;
 }
 
+#theme-btn {
+    filter: invert();
+    width: 40px;
+    vertical-align: middle;
+    right: 10px;
+    position: absolute;
+    cursor: pointer;
+    transition: 1s;
+}
+
+#mav {
+    color: rgb(62, 62, 245);
+}
+
 ::-webkit-scrollbar {
     width: 15px;
 }
@@ -234,14 +246,19 @@ li a {
     nav {
         width: 100%;
     }
+
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1100px) {
     .dev-img-l {
         width: 300px;
     }
 
     .dev-img-s {
         width: 300px;
+    }
+
+    #theme-btn {
+        display: none;
     }
 }
