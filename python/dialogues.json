@@ -20,7 +20,7 @@
     },
     "eventek": {
         "varos": {
-            "rablas": ["A város utcáin egyszer csak egy kétes kinézetű férfi odalép hozzád.", "A férfi egy pisztolyt fog a fejedhez, és azt mondja: Add ide minden pénzed te csöves!", "Mivel nem akarsz meghalni, átadsz egy kis pénzt.", "Mivel a másik zsebedben is van pénz, ezért egy kicsit meg tudsz tartani.", "A férfi elszalad, te pedig szomorúan továbbmész."],
+            "rablas": ["A város utcáin egyszer csak egy kétes kinézetű férfi odalép hozzád.", "A férfi egy pisztolyt fog a fejedhez, és azt mondja: Add ide minden pénzed te csöves!", "Mivel nem akarsz meghalni, átadsz egy kis pénzt.", "Mivel a másik zsebedben is van pénz, ezért egy kicsit meg tudsz tartani.", "A férfi elszalad, te pedig szomorúan továbbmész.", "-{penz} forint"],
             "penz": ["Menet közben lenézel és találsz a földön {penz} forintot.", "Lehajolsz, felveszed, majd továbbmész."]
         },
         "vonat": {
@@ -49,7 +49,7 @@
             "jegyNincs": ["Amikor az ellenőr megkér, hogy mutasd meg a jegyedet, azt mondod neki, hogy nincs.", "Megkérdezi, hogy miért nincs, de nem tudsz mit mondani.", "Előveszi a csekkfüzetét és ráfirkál valamit.", "Letépi a csekket és a kezedbe nyomja", "Ránézel a csekkre, és látod, hogy {penz} forintot kell fizetned."],
             "jegyNincsPenzNincs": ["Elmondod az ellenőrnek, hogy nincs nálad ennyi pénz, így ő hívja a rendőröket.", "Az ellenőr leszállít a vonatról, és a rendőrök börtönbe zárnak."],
             "alvas": ["Melletted pont üres egy hely, így lefekszel és elalszol.", "Amikor felébredsz, körülnézel..."],
-            "leszallas": ["Leszállsz a vonatról és körülnézel..."]
+            "leszallas": ["A következő állomáson leszállsz a vonatról és körülnézel..."]
         },
         "bolt": {
             "vasarlas": ["Veszel egy {targy}-t, ami {ar} forintba kerül."],
