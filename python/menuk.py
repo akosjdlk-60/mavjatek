@@ -11,7 +11,7 @@ import os
 import keyboard
 import asyncio
 from random import randint, choices
-from python.dialogue_parser import read
+from dialogue_parser import read
 import random
 
 
@@ -21,14 +21,6 @@ TODO:
 import multiprocessing -> waitforkey
 https://www.dataleadsfuture.com/combining-multiprocessing-and-asyncio-in-python-for-performance-boosts/#use-asyncio%E2%80%99s-runinexecutor-to-fix-it
 """
-
-def update_opciok(opciok: list):
-    global layout
-    opcio_layout = Layout(name="tgzuiop")
-    opcio_layout.split_column("")
-    for opcio in opciok:
-        opcio_layout.add_split(opcio)
-    layout["opciok"].update(opcio_layout)
 
 layout = Layout()
 
@@ -60,13 +52,11 @@ async def load():
     helper()
     live.start()
     penz = random.randint(0,250)
-    await update_stats(statok, inventory)
-    # await print_szoveg(read("allomasok budapest"), nev = "Akos", penz=penz)
+    await print_szoveg(read("allomasok budapest"), True, nev = "Akos", penz=penz)
     statok["penz"] += penz
     await update_stats(statok, inventory)
 
-
-async def update_stats(statok: dict = statok, inventory: dict = inventory) -> None:
+def update_stats(statok: dict = statok, inventory: dict = inventory) -> None:
     global stattable
     global ido
     
@@ -86,8 +76,6 @@ async def update_stats(statok: dict = statok, inventory: dict = inventory) -> No
 
 
     layout["statok"].update(Align(stattable, "center", vertical="middle", pad=True))
-
-
 
 def get_stats() -> dict:
     return statok
@@ -146,7 +134,6 @@ def ResetLayout() -> Layout:
     
     return layout
 
-
 def helper():
     helptable = Table(show_edge=False, show_lines=False, show_header=False, expand=False)
     helptable.add_column(justify = "left")
@@ -155,17 +142,15 @@ def helper():
     helptable.add_row("r: Frissítés")
     layout['help'].update(Align(helptable, "center", vertical="middle", pad=True))
 
-
 def update_opciok(opciok: list):
     global layout
-    table = Table(show_edge=False, show_lines=False, show_header=False, expand=True, padding=(1, 0))
+    table = Table(show_edge=False, show_lines=False, show_header=False, expand=True, padding=1)
     i=1
     for opcio in opciok:
         table.add_row(Text(f"{i} - {opcio}"))
         i+=1
     
-    layout['opciok'].update(Padding(table, 20))
-
+    layout['opciok'].update(table)
 
 async def allomas_menu() -> str:
     global statok
@@ -173,17 +158,100 @@ async def allomas_menu() -> str:
     global kovetkezo_vonat
     
     jegy_ar = randint(500, 600)
-    update_opciok(["Séta a boltba (1 óra)", "Futás a boltba (0.5 óra)", f"Jegyvásárlás ({jegy_ar} Pénz)", f"Vár, majd felszáll a vonatra {kovetkezo_vonat[0]}:{kovetkezo_vonat[1]}-kor", "Kisgyerek meglopása (+100 - +250 Pénz)", "Öltönyös úriember meglopása (+300 - +600 Pénz)", "Kéregetés"])
-    x = await waitforkey(["1", "2", "3", "4", "5", "6", "7", "8"])
+    if statok["keregetett"]:
+        update_opciok(["Séta a boltba (1 óra)", "Futás a boltba (0.5 óra)", f"Jegyvásárlás ({jegy_ar} Pénz)", f"Vár, majd felszáll a vonatra {kovetkezo_vonat[0]}:{kovetkezo_vonat[1]}-kor", "Kisgyerek meglopása (+100 - +250 Pénz)", "Öltönyös úriember meglopása (+300 - +600 Pénz)"])
+        x = await waitforkey(["1", "2", "3", "4", "5", "6"])
+    else:
+        update_opciok(["Séta a boltba (1 óra)", "Futás a boltba (0.5 óra)", f"Jegyvásárlás ({jegy_ar} Pénz)", f"Vár, majd felszáll a vonatra {kovetkezo_vonat[0]}:{kovetkezo_vonat[1]}-kor", "Kisgyerek meglopása (+100 - +250 Pénz)", "Öltönyös úriember meglopása (+300 - +600 Pénz)", "Kéregetés"])
+        x = await waitforkey(["1", "2", "3", "4", "5", "6", "7"])
+    
+
     match x:
         
         case 1:
-            await print_szoveg(read("menu allomas seta"), True)
+            event = choices(["rablas", 500, 200, 50, 10, "semmi"], weights=[7, 8, 12, 18, 20, 35])
+            print(event)
+            match event[0]:
+                case "semmi":
+                    await print_szoveg(read("menu allomas seta"), True)
+                
+                case 500:
+                    await print_szoveg(["Elkezdesz sétálni a bolt felé..."], False)
+                    await print_szoveg(read("eventek varos penz"), True, penz=500)
+                    statok["penz"] += 500
+                    update_stats()
+                
+                case 200:
+                    await print_szoveg(["Elkezdesz sétálni a bolt felé..."], False)
+                    await print_szoveg(read("eventek varos penz"), True, penz=200)
+                    statok["penz"] += 200
+                    update_stats()
+
+                case 50:
+                    await print_szoveg(["Elkezdesz sétálni a bolt felé..."], False)
+                    await print_szoveg(read("eventek varos penz"), True, penz=50)
+                    statok["penz"] += 50
+                    update_stats()
+
+                case 10:
+                    await print_szoveg(["Elkezdesz sétálni a bolt felé..."], False)
+                    await print_szoveg(read("eventek varos penz"), True, penz=10)
+                    statok["penz"] += 10
+                    update_stats()
+                
+                case "rablas":
+                    szazalek = randint(15, 50)/100
+                    penz = statok["penz"]
+                    penz = penz - penz*szazalek
+                    await print_szoveg(["Elkezdesz sétálni a bolt felé..."], False)
+                    await print_szoveg(read("eventek varos rablas"), True, penz=int(penz))
+                    statok["penz"] = int(penz)
+                    update_stats()
+                    add_time(15)
+
             add_time(60)
             return "bolt"
         
         case 2:
-            await print_szoveg(read("menu allomas futas"), True)
+            event = choices(["rablas", 500, 200, 50, 10, "semmi"], weights=[10, 5, 12, 18, 20, 35])
+            match event:
+                case "semmi":
+                    await print_szoveg(read("menu allomas seta"), True)
+                
+                case 500:
+                    await print_szoveg(["Elkezdesz futni a bolt felé..."], False)
+                    await print_szoveg(read("eventek varos penz"), True, penz=500)
+                    statok["penz"] += 500
+                    update_stats()
+                
+                case 200:
+                    await print_szoveg(["Elkezdesz futni a bolt felé..."], False)
+                    await print_szoveg(read("eventek varos penz"), True, penz=200)
+                    statok["penz"] += 200
+                    update_stats()
+
+                case 50:
+                    await print_szoveg(["Elkezdesz futni a bolt felé..."], False)
+                    await print_szoveg(read("eventek varos penz"), True, penz=50)
+                    statok["penz"] += 50
+                    update_stats()
+
+                case 10:
+                    await print_szoveg(["Elkezdesz futni a bolt felé..."], False)
+                    await print_szoveg(read("eventek varos penz"), True, penz=10)
+                    statok["penz"] += 10
+                    update_stats()
+                
+                case "rablas":
+                    szazalek = randint(15, 50)/100
+                    penz = statok["penz"]
+                    penz = penz - penz*szazalek
+                    await print_szoveg(["Elkezdesz futni a bolt felé..."], False)
+                    await print_szoveg(read("eventek varos rablas"), True, penz=int(penz))
+                    statok["penz"] = int(penz)
+                    update_stats()
+                    add_time(15)
+
             add_time(30)
             return "bolt"
         
@@ -193,6 +261,7 @@ async def allomas_menu() -> str:
                 await print_szoveg(read("menu allomas jegyVasarlas"), True)
                 statok["penz"] -= jegy_ar
                 statok["jegy"] = True
+                update_stats()
                 return "allomas"
             
             else:
@@ -207,6 +276,7 @@ async def allomas_menu() -> str:
         case 5:
             lop_osszeg = randint(100, 250)
             await print_szoveg(read("menu allomas lopasGyerek"), False, penz=lop_osszeg)
+            update_stats()
             if choices(["lecsuktak", lop_osszeg], weights=[10, 100])[0] == "lecsuktak":
                 await print_szoveg(read("menu allomas elkapnak"), False)
                 await print_szoveg(["Lecsuktak, Game Over"], False)
@@ -214,25 +284,27 @@ async def allomas_menu() -> str:
                 
             
         case 6:
-            lop_osszeg = randint(100, 250)
+            lop_osszeg = randint(300, 600)
             await print_szoveg(read("menu allomas lopasFerfi"), False, penz=lop_osszeg)
+            update_stats()
             if choices(["lecsuktak", lop_osszeg], weights=[40, 100])[0] == "lecsuktak":
                 await print_szoveg(read("menu allomas elkapnak"), False)
                 await print_szoveg(["Lecsuktak, Game Over"], False)
                 keyboard.send(hotkey='alt+f4')
 
         case 7:
-            keregetes_osszeg = randint(100, 250)
-            
 
-        case 8:
-            pass
+            keregetes_osszeg = randint(100, 250)
+            await print_szoveg(read("menu allomas keregetes"), True, penz=keregetes_osszeg)
+            statok["keregetett"] = True
+            update_stats()
+
 
 
 async def vonat_menu() -> str:
     global statok
     global inventory
-    update_opciok(["Leszáll", "Alszik a következő állomásig", "Bliccelés a WC-ben"])
+    update_opciok(["Alszik a következő állomásig", "Bliccelés a WC-ben"])
     x = waitforkey(3)
     match x:
         case 1:
@@ -301,7 +373,7 @@ async def clock():
     while True:
         await sleep(1)
         ido += datetime.timedelta(minutes=1)
-        await update_stats()
+        update_stats()
 
 def time():
     return ido
@@ -328,7 +400,7 @@ async def print_szoveg(szovegz: list, tovabb: bool, **kwargs):
                 string += szovegz[i].format(**kwargs)[j]
             except IndexError:
                 pass
-            layout['szoveg'].update(Align(string, "center", vertical="middle"))
+            layout['szoveg'].update(Padding(Align(string, "center", vertical="middle"), 2))
             await asyncio.sleep(0.01)
 
         if tovabb:
@@ -336,7 +408,13 @@ async def print_szoveg(szovegz: list, tovabb: bool, **kwargs):
                 await waitforkey("space")
         else: await waitforkey("space")
 
+def get_info() -> list[statok, inventory]:
 
+    return_list = []
+    return_list.append(statok)
+    return_list.append(inventory)
+    
+    return return_list
 
 
 

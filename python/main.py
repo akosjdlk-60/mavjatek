@@ -10,8 +10,8 @@ import keyboard
 from rich.align import Align
 from rich.text import Text
 
-import python.menuk as menuk
-from python.dialogue_parser import read
+import menuk as menuk
+from dialogue_parser import read
 
 
 async def waitforkey(key: list | str) -> str | None:
@@ -52,15 +52,27 @@ async def main():
 
     await menuk.load()
     
-    while True:
-        x = await menuk.allomas_menu()
-        match x:
+    while True: #soha nem lepunk ki
+        statok = menuk.get_info()[0]
 
-            case "bolt":
-                await menuk.bolt_menu()
+        while statok["varos"] != "Bécs":
+            
+            while True:
 
-            case "x":
-                pass
+                x = await menuk.allomas_menu()
+                match x:
+
+                    case "bolt":
+                        await menuk.bolt_menu()
+
+                    case "allomas":
+                        break
+
+                    case "vonat":
+                        await menuk.vonat_menu()
+
+        #bécs cuccos
         
         
 
+asyncio.run(main())
