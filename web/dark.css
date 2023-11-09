@@ -108,7 +108,7 @@ h1 {
 
 #index-text {
     text-align: center;
-    margin-top: 80px;
+    margin-top: 20px;
     font-size: 30px;
     font-weight: 600;
     color: white;
@@ -206,7 +206,7 @@ section {
     transition: 1s;
 }
 
-#mav {
+.mav {
     color: rgb(62, 62, 245);
 }
 
