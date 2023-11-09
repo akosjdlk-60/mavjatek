@@ -208,6 +208,7 @@ section {
 
 .mav {
     color: rgb(62, 62, 245);
+    font-style: italic;
 }
 
 ::-webkit-scrollbar {

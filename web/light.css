@@ -208,6 +208,7 @@ section {
 
 .mav {
     color: black;
+    font-style: italic;
 }
 
 ::-webkit-scrollbar {
