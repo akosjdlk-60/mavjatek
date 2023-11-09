@@ -135,7 +135,7 @@ h1 {
     border: 2px solid white;
     border-radius: 5px;
     transition: 0.3s;
-    box-shadow: 10px 20px 1px black;
+    box-shadow: 7px 12px 1px black;
     margin-top: 20px;
     transform: translate(0px, -10px);
 }
@@ -152,7 +152,7 @@ section {
     border: 2px solid white;
     border-radius: 5px;
     transition: 0.3s;
-    box-shadow: 10px 20px 1px black;
+    box-shadow: 7px 12px 1px black;
     transform: translate(0px, -10px);
     margin-top: 20px;
 }
@@ -207,14 +207,13 @@ section {
 }
 
 .mav {
-    display: inline-block;
     color: black;
     font-style: italic;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
 .mav:hover {
-    scale: 0.9;
+    color: rgb(179, 179, 179);
 }
 
 ::-webkit-scrollbar {
@@ -234,22 +233,6 @@ section {
     background: #5e5e5e;
 }
 
-@media only screen and (max-width: 412px) {
-    .pfp {
-        width: 300px;
-        height: 400px;
-    }
-
-    iframe {
-        width: 90%;
-        height: 400px;
-    }
-
-    nav {
-        width: 100%;
-    }
-}
-
 @media only screen and (max-width: 1100px) {
     .dev-img-l {
         width: 300px;
@@ -266,5 +249,43 @@ section {
         border-radius: 7px;
         background-color: white;
         padding: 5px;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .pfp {
+        width: 325px;
+        height: 420px;
+    }
+
+    iframe {
+        width: 90%;
+        height: 400px;
+    }
+
+    nav {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .pfp {
+        width: 310px;
+        height: 400px;
+    }
+
+}
+
+@media only screen and (max-width: 390px) {
+    .pfp {
+        width: 286px;
+        height: 370px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .pfp {
+        width: 256px;
+        height: 340px;
     }
 }
