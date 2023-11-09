@@ -207,8 +207,14 @@ section {
 }
 
 .mav {
+    display: inline-block;
     color: rgb(62, 62, 245);
     font-style: italic;
+    transition: 0.3s;
+}
+
+.mav:hover {
+    scale: 0.9;
 }
 
 ::-webkit-scrollbar {
