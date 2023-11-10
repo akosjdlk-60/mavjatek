@@ -67,22 +67,24 @@ h1 {
 
 .card {
     border: 2px solid white;
-    border-radius: 5px;
+    border-radius: 10px;
     display: inline-block;
     margin: 30px;
-    color: white;
     transition: 0.3s;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .card:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-    color: black;
+    color: white;
+    background-color: #4b00e2;
     scale: 1.05;
 }
 
 .pfp {
     width: 410px;
     height: 530px;
+    border-radius: 10px;
 }
 
 .pfp-name {
@@ -188,6 +190,7 @@ section {
 .date-img {
     margin: auto;
     position: relative;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
@@ -279,6 +282,13 @@ section {
 @media only screen and (max-width: 390px) {
     .pfp {
         width: 286px;
+        height: 370px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .pfp {
+        width: 271px;
         height: 370px;
     }
 }

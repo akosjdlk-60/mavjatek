@@ -67,7 +67,7 @@ h1 {
 
 .card {
     border: 2px solid white;
-    border-radius: 5px;
+    border-radius: 10px;
     display: inline-block;
     margin: 30px;
     color: white;
@@ -83,6 +83,7 @@ h1 {
 .pfp {
     width: 410px;
     height: 530px;
+    border-radius: 10px;
 }
 
 .pfp-name {
@@ -189,6 +190,7 @@ section {
 .date-img {
     margin: auto;
     position: relative;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
@@ -279,6 +281,13 @@ section {
 @media only screen and (max-width: 390px) {
     .pfp {
         width: 286px;
+        height: 370px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .pfp {
+        width: 271px;
         height: 370px;
     }
 }
