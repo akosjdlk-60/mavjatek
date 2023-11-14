@@ -389,6 +389,7 @@ async def bolt_menu() -> list:
                 await print_szoveg(read("menu bolt elkapnak"), False)
                 await print_szoveg(["Lecsuktak, Game Over"], False)
                 exit(0)
+            
 
         case 6:
             await print_szoveg(read("menu bolt lopas"), False, targy = "sportszelet")
@@ -397,6 +398,7 @@ async def bolt_menu() -> list:
                 await print_szoveg(read("menu bolt elkapnak"), False)
                 await print_szoveg(["Lecsuktak, Game Over"], False)
                 exit(0)
+            
 
         case 7:
             event = choices(["rablas", 500, 200, 50, 10, "semmi"], weights=[7, 8, 12, 18, 20, 35])
