@@ -52,11 +52,12 @@ async def load():
     helper()
     live.start()
     penz = random.randint(0,250)
-    await print_szoveg(read("allomasok budapest"), True, nev = "Akos", penz=penz)
+    # await print_szoveg(read("allomasok budapest"), True, nev = "Akos", penz=penz)
     statok["penz"] += penz
-    await update_stats(statok, inventory)
+    update_stats(statok, inventory)
 
 def update_stats(statok: dict = statok, inventory: dict = inventory) -> None:
+    print(statok)
     global stattable
     global ido
     
@@ -202,11 +203,11 @@ async def allomas_menu() -> str:
                 case "rablas":
                     szazalek = randint(15, 50)/100
                     penz = statok["penz"]
-                    penz = penz - penz*szazalek
+                    elveszt = penz - penz*szazalek
                     await print_szoveg(["Elkezdesz sétálni a bolt felé..."], False)
-                    await print_szoveg(read("eventek varos rablas"), True, penz=int(penz))
-                    statok["penz"] = int(penz)
-                    update_stats()
+                    await print_szoveg(read("eventek varos rablas"), True, penz=int(penz-elveszt))
+                    statok["penz"] -= int(elveszt)
+                    update_stats(statok)
                     add_time(15)
 
             add_time(60)
@@ -219,37 +220,37 @@ async def allomas_menu() -> str:
                     await print_szoveg(read("menu allomas seta"), True)
                 
                 case 500:
-                    await print_szoveg(["Elkezdesz futni a bolt felé..."], False)
-                    await print_szoveg(read("eventek varos penz"), True, penz=500)
                     statok["penz"] += 500
                     update_stats()
+                    await print_szoveg(["Elkezdesz futni a bolt felé..."], False)
+                    await print_szoveg(read("eventek varos penz"), True, penz=500)
                 
                 case 200:
-                    await print_szoveg(["Elkezdesz futni a bolt felé..."], False)
-                    await print_szoveg(read("eventek varos penz"), True, penz=200)
                     statok["penz"] += 200
                     update_stats()
+                    print(statok["penz"])
+                    await print_szoveg(["Elkezdesz futni a bolt felé..."], False)
+                    await print_szoveg(read("eventek varos penz"), True, penz=200)
 
                 case 50:
-                    await print_szoveg(["Elkezdesz futni a bolt felé..."], False)
-                    await print_szoveg(read("eventek varos penz"), True, penz=50)
                     statok["penz"] += 50
                     update_stats()
+                    await print_szoveg(["Elkezdesz futni a bolt felé..."], False)
+                    await print_szoveg(read("eventek varos penz"), True, penz=50)
 
                 case 10:
-                    await print_szoveg(["Elkezdesz futni a bolt felé..."], False)
-                    await print_szoveg(read("eventek varos penz"), True, penz=10)
                     statok["penz"] += 10
                     update_stats()
+                    await print_szoveg(["Elkezdesz futni a bolt felé..."], False)
+                    await print_szoveg(read("eventek varos penz"), True, penz=10)
                 
                 case "rablas":
-                    szazalek = randint(15, 50)/100
                     penz = statok["penz"]
-                    penz = penz - penz*szazalek
-                    await print_szoveg(["Elkezdesz futni a bolt felé..."], False)
-                    await print_szoveg(read("eventek varos rablas"), True, penz=int(penz))
-                    statok["penz"] = int(penz)
-                    update_stats()
+                    elveszt = penz - penz*szazalek
+                    statok["penz"] -= int(elveszt)
+                    update_stats(statok)
+                    await print_szoveg(["Elkezdesz sétálni a bolt felé..."], False)
+                    await print_szoveg(read("eventek varos rablas"), True, penz=int(penz-elveszt))
                     add_time(15)
 
             add_time(30)
