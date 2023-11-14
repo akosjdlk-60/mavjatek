@@ -305,28 +305,80 @@ async def allomas_menu() -> str:
 async def vonat_menu() -> str:
     global statok
     global inventory
-    update_opciok(["Alszik a következő állomásig", "Bliccelés a WC-ben"])
-    x = waitforkey(3)
+    update_opciok(["Ülsz a helyeden, várod az ellenőrt", "Bliccelés a WC-ben"])
+    await print_szoveg(read("menuk vonat indulas"), False)
+    x = await waitforkey(["1", "2"])
     match x:
         case 1:
-            pass
-        
+            if statok["jegy"]:
+                await print_szoveg(read("menuk vonat jegyVan"))
+            
+            ########## nincs jegy ##########
+            penz = statok["penz"]
+            await print_szoveg(read("menuk vonat jegyNincs"), False, penz = 1000)
+            if penz < 1000:
+                await print_szoveg(read("menuk vonat jegyNincsPenzNincs"), False)
+                await print_szoveg(["Lecsuktak, Game Over"], False)
+                keyboard.send(hotkey='alt+F4')
+            
+            #### birsag ###
+            await print_szoveg(["Kifizeted a bírságot..."], True)
+            statok["penz"] -= 1000
+            
+
         case 2:
-            pass
-        
-        case 3:
-            pass
+            await print_szoveg(read("menuk vonat blicceles"), True)
+
+    update_opciok(["Alvás a következő állomásig", "Ülsz és gondolkozol azon, hogy kinek a temetésére mész"])
+    y = await waitforkey(["1", "2"])
+    match y:
+        case 1:
+            await print_szoveg(read("menuk vonat alvas"), False)
+            #time management & energia
+            # uj varos stat, keregetes stat
+            await print_szoveg(read("menuk vonat leszallas"), True)
+            return "allomas"
+
+        case 2:
+            event = choices(["ferfi", "nok", "biztHiba", "vezetekSzakadas", "semmi"], weights=[15, 15, 35, 5, 30])
+            match event:
+                case "semmi":
+                    await print_szoveg(read("menu allomas seta"), True)
+                
+                case "ferfi":
+                    await print_szoveg(read("eventek vonat ferfi"), False)
+                    # -10 energia
+                
+                case "nok":
+                    await print_szoveg(read("eventek vonat nok"), False)
+                    # -25 energia
+
+                case "biztHiba":
+                    await print_szoveg(read("eventek vonat biztHiba"))
+                    add_time(40)
+
+                case "vezetekSzakadas":
+                    await print_szoveg(read("eventek vonat biztHiba"))
+                    add_time(120)
+
+            add_time(120)
+            await print_szoveg(read("menuk vonat leszallas"), True)
+            return "allomas"
+
 
 
 async def bolt_menu() -> list:
     global statok
     global inventory
     update_opciok(["Energiaital vásárlás", "Sportszelet vásárlás", "Fánk vásárlás", "Virág vásárlás", "Virág lopás", "Étel lopás", "Séta az állomásra", "Futás az állomásra"])
-    x = await waitforkey(8)
+    x = await waitforkey(["1", "2", "3", "4", "5", "6", "7", "8"])
+    penz = statok["penz"]
     match x:
         case 1:
-            pass
-        
+            if penz - 500 >= 0:
+                inventory["Energiaital"] += 1
+                statok["penz"] -= 500
+
         case 2:
             pass
 
