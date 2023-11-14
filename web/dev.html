@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MÁV Játék - Development</title>
-    <link rel="stylesheet" href="style.css">
+    <link id="css" rel="stylesheet" href="">
     <link rel="shortcut icon" href="https://www.mavcsoport.hu/sites/all/themes/mav/images/favicon.ico">
 </head>
 
@@ -15,9 +15,10 @@
         <a class="a" href="keszitok.html">Készítők</a>
         <a class="a" href="graf.html">Gráf</a>
         <a class="a" href="#">Development</a>
+        <img id="theme-btn" src="images/lightmode.png">
     </nav>
     <div id="dev">
-        <h1>- Development -</h1>
+        <h1>Development</h1>
         <p>Itt találhatóak a fejlesztői dokumentációk.<br><i style="font-size: large;">*A képek a fejlesztés során
                 készültek, így azok nem feltétlen tükrözik a játék jelenlegi forráskódját.</i></p>
         <div class="dev-sect">
@@ -27,9 +28,10 @@
                 <p style="margin: 0;">A fejlesztés során felhasznált és játék futtatásához szükséges <span
                         class="outline">pip csomagok:</span></p>
                 <ul style="display: inline-block; text-align: left;">
-                    <li><a href="https://pypi.org/project/rich/" target="_blank">rich</a></li>
-                    <li><a href="https://pypi.org/project/keyboard/" target="_blank">keyboard</a></li>
-                    <li><a href="https://pypi.org/project/asyncio/" target="_blank">asyncio</a></li>
+                    <li>rich</li>
+                    <li>keyboard</li>
+                    <li>asyncio</li>
+                    <li>datetime</li>
                 </ul>
             </section>
 
@@ -75,6 +77,7 @@
                     alt="windows terminal icon" title="Windows Terminal"></a>
         </div>
     </div>
+    <script src="theme.js"></script>
 </body>
 
 </html>

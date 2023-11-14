@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MÁV Játék - Kezdőlap</title>
-    <link rel="stylesheet" href="style.css">
+    <link id="css" rel="stylesheet" href="">
     <link rel="shortcut icon" href="https://www.mavcsoport.hu/sites/all/themes/mav/images/favicon.ico">
 </head>
 
@@ -15,22 +15,27 @@
         <a class="a" href="keszitok.html">Készítők</a>
         <a class="a" href="graf.html">Gráf</a>
         <a class="a" href="dev.html">Development</a>
+        <img id="theme-btn" src="images/lightmode.png">
     </nav>
     <div id="index-text">
-        <p>Ez a <i style="color: rgb(17, 120, 255);">MÁV Játék</i> hivatalos weboldala.</p>
+        <h1 style="margin-top: 0;">Ez a <span class="mav">MÁV Játék</span> hivatalos weboldala.</h1>
         <hr>
         <p>A történet röviden: Budapesten vagyunk és kapunk egy levelet, hogy meghalt az egyik bécsi
             rokonunk.<br>Szegények vagyunk, de el akarunk jutni Bécsbe a temetésre, ami holnap 15:00-kor van.</p>
-        <p>Ezen kívül ajánlatos a játék során beszereznünk egy <span style="color: greenyellow;">virágot</span> is a
+        <p>Ezen kívül ajánlatos a játék során beszereznünk egy virágot is a
             sírra.</p>
-        <p>A játékban <span style="color: red;">ennünk, aludnunk</span> is kell - ha nem, akkor rossz vége lesz.</p>
+        <p>A játékban ennünk, aludnunk is kell - ha nem tesszük, akkor rossz vége lesz.
+        </p>
         <p>Az idő is ellenünk játszik, így okosan kell gazdálkodnunk vele.</p>
-        <p>Munkánkban plot twisteket és <span style="color: purple;">easter eggeket</span> rejtettünk el, tehát egyszeri
+        <p>Munkánkban plot twisteket és easter eggeket rejtettünk el, tehát egyszeri
             végigjátszással nem tudunk mindent felfedezni.</p>
         <hr>
+        <a href="https://github.com/akosjdlk-60/mavjatek/archive/refs/heads/main.zip" class="mav"
+            style="text-decoration: underline;">A játék letöltése</a>
         <p>A játékot a <span class="outline">!run.bat</span> fájllal tudjuk futtatni.</p>
         <p id="jojatekot">Jó játékot!</p>
     </div>
+    <script src="theme.js"></script>
 </body>
 
 </html>

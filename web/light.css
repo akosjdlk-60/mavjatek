@@ -1,8 +1,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 20px;
-    background: rgb(2, 0, 36);
-    background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(52, 52, 71, 1) 83%);
+    background: radial-gradient(circle, rgb(134, 134, 134) 0%, rgb(82, 81, 81) 83%);
 }
 
 nav {
@@ -14,7 +13,7 @@ nav {
     text-align: center;
     margin: 0 auto;
     width: 65%;
-    background-color: rgb(58, 59, 102);
+    background-color: rgb(172, 172, 179);
     padding: 10px 0;
     z-index: 10;
     box-shadow: 0px 5px 5px black;
@@ -42,13 +41,13 @@ iframe:hover {
 }
 
 .a:hover {
-    color: rgb(179, 179, 179);
+    color: rgb(70, 70, 70);
     margin: 0 35px 0 35px;
 }
 
 a {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 .arrow {
@@ -68,7 +67,7 @@ h1 {
 
 .card {
     border: 2px solid white;
-    border-radius: 5px;
+    border-radius: 10px;
     display: inline-block;
     margin: 30px;
     color: white;
@@ -84,6 +83,7 @@ h1 {
 .pfp {
     width: 410px;
     height: 530px;
+    border-radius: 10px;
 }
 
 .pfp-name {
@@ -97,9 +97,10 @@ h1 {
 }
 
 .outline {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     padding: 3px;
     font-weight: bold;
+    color: black;
 }
 
 #cards {
@@ -109,7 +110,7 @@ h1 {
 
 #index-text {
     text-align: center;
-    margin-top: 80px;
+    margin-top: 20px;
     font-size: 30px;
     font-weight: 600;
     color: white;
@@ -118,7 +119,6 @@ h1 {
 
 #jojatekot {
     font-size: 48px;
-    color: white;
     font-weight: 700;
     transition: 0.5s;
 }
@@ -136,7 +136,7 @@ h1 {
     border: 2px solid white;
     border-radius: 5px;
     transition: 0.3s;
-    box-shadow: 10px 20px 1px black;
+    box-shadow: 7px 12px 1px black;
     margin-top: 20px;
     transform: translate(0px, -10px);
 }
@@ -153,7 +153,7 @@ section {
     border: 2px solid white;
     border-radius: 5px;
     transition: 0.3s;
-    box-shadow: 10px 20px 1px black;
+    box-shadow: 7px 12px 1px black;
     transform: translate(0px, -10px);
     margin-top: 20px;
 }
@@ -190,6 +190,7 @@ section {
 .date-img {
     margin: auto;
     position: relative;
+    width: -moz-fit-content;
     width: fit-content;
 }
 
@@ -198,9 +199,23 @@ section {
     margin-bottom: 80px;
 }
 
-li a {
-    color: white;
-    text-decoration: underline;
+#theme-btn {
+    width: 40px;
+    vertical-align: middle;
+    right: 10px;
+    position: absolute;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.mav {
+    color: black;
+    font-style: italic;
+    transition: 0.4s;
+}
+
+.mav:hover {
+    color: rgb(179, 179, 179);
 }
 
 ::-webkit-scrollbar {
@@ -208,11 +223,11 @@ li a {
 }
 
 ::-webkit-scrollbar-track {
-    background: #53308a;
+    background: #414141;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #7d7ff1;
+    background: #a0a0a0;
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.5), 0 -6px 6px rgba(0, 0, 0, 0.5);
 }
 
@@ -220,10 +235,29 @@ li a {
     background: #5e5e5e;
 }
 
-@media only screen and (max-width: 412px) {
-    .pfp {
+@media only screen and (max-width: 1100px) {
+    .dev-img-l {
         width: 300px;
-        height: 400px;
+    }
+
+    .dev-img-s {
+        width: 300px;
+    }
+
+    #theme-btn {
+        right: 10px;
+        bottom: 10px;
+        position: fixed;
+        border-radius: 7px;
+        background-color: white;
+        padding: 5px;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .pfp {
+        width: 325px;
+        height: 420px;
     }
 
     iframe {
@@ -236,12 +270,31 @@ li a {
     }
 }
 
-@media only screen and (max-width: 1000px) {
-    .dev-img-l {
-        width: 300px;
+@media only screen and (max-width: 414px) {
+    .pfp {
+        width: 310px;
+        height: 400px;
     }
 
-    .dev-img-s {
-        width: 300px;
+}
+
+@media only screen and (max-width: 390px) {
+    .pfp {
+        width: 286px;
+        height: 370px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .pfp {
+        width: 271px;
+        height: 370px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .pfp {
+        width: 256px;
+        height: 340px;
     }
 }
