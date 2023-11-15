@@ -304,7 +304,7 @@ async def vonat_menu() -> str:
     match x:
         case 1:
             if statok["jegy"]:
-                await print_szoveg(read("menu vonat jegyVan"))
+                await print_szoveg(read("menu vonat jegyVan"), False)
                 statok["jegy"] = False
             else:
             
