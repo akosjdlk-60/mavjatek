@@ -12,19 +12,19 @@
             "8 óra körül Budapest utcáinak hideg szele felébreszt... valami nem stimmel...",
             "Egyszer csak egy fiatal férfi odasétál hozzád, a kezedbe nyom egy levelet és a kalapodba tesz egy kis pénzt.",
             "Mire felfogod mi történt, a férfi már sehol sincs.",
-            "Kinyitod a levelet és elolvasod a tartalmát: Kedves {nev}! Egy távoli rokonod, Henry bácsi aki Bécsben él, meghalt. A család szeretné ha eljönnél a temetésre ami holnap lesz, 15 órakor. Jól esne ha hoznál egy csokor virágot is a sírjára. Ha ezt megteszed, a családunk megjutalmaz. UI: A temető címe: Haidackergasse 6 Üdvözlettel: Klára",
+            "Kinyitod a levelet és elolvasod a tartalmát: Kedves Fred! Egy távoli rokonod, Henry bácsi aki Bécsben él, meghalt. A család szeretné ha eljönnél a temetésre ami holnap lesz, 15 órakor. Jól esne ha hoznál egy csokor virágot is a sírjára. Ha ezt megteszed, a családunk megjutalmaz. UI: A temető címe: Haidackergasse 6 Üdvözlettel: Klára",
             "Ugyan már, ez csak egy átverés lehet, de azért elolvasod még egyszer a levelet.",
             "Közben megnézed a pénzt is, {penz} forintot találsz a kalapodban.",
             "Bár földrajzból nem voltál valami jó, tudod hogy Bécs gyalog elég messze van.",
             "Végül úgy döntesz, hogy elindulsz Bécsbe, mivel úgy sincs semmi vesztenivalód.",
             "Elsétálsz a Keleti pályaudvarra.",
             "Mikor belépsz az állomás hatalmas kapuin, körülnézel...",
-            "Szemügyre veszed a menetrendet",
+            "Szemügyre veszed a menetrendet.",
             "A következő vonat 16:32-kor indul Bécs felé, úgy tűnik az első megálló Tatabánya."
         ],
         "tatabanya": [
             "A vonat végre beáll a tatabányai állomásra.",
-            "Eszedbe jut, hogy kellene venni egy újabb jegyet, de persze a bliccelés is egy lehetőség. Közben ránézel a vonatban feltűntetett menetrendre",
+            "Eszedbe jut, hogy kellene venni egy újabb jegyet, de persze a bliccelés is egy lehetőség. Közben ránézel a vonatban feltűntetett menetrendre.",
             "A vonat reggel 7:15-kor indul tovább Győr felé."
         ],
         "gyor": [
@@ -95,7 +95,7 @@
             ],
             "temetes": [
                 "...Mikor a család tagjai hallottak a halálodról, úgy döntöttek megszervezik a temetésed.",
-                "Rájöttek, hogy van egy rokonod, aki Budapesten él",
+                "Rájöttek, hogy van egy rokonod, aki Budapesten él.",
                 "Küldtek neki egy meghívót..."
             ]
         }
@@ -205,12 +205,14 @@
                 "Mikor kijössz, már nincs ott az ellenőr.",
                 "Visszamész a helyedre."
             ],
-            "jegyVan": "Megmutatod a jegyedet az ellenőrnek. Leellenőrzi majd továbbmegy.",
+            "jegyVan": [
+                "Megmutatod a jegyedet az ellenőrnek. Leellenőrzi majd továbbmegy."
+            ],
             "jegyNincs": [
                 "Amikor az ellenőr megkér, hogy mutasd meg a jegyedet, azt mondod neki, hogy nincs.",
                 "Megkérdezi, hogy miért nincs, de nem tudsz mit mondani.",
                 "Előveszi a csekkfüzetét és ráfirkál valamit.",
-                "Letépi a csekket és a kezedbe nyomja",
+                "Letépi a csekket és a kezedbe nyomja.",
                 "Ránézel a csekkre, és látod, hogy {penz} forintot kell fizetned."
             ],
             "jegyNincsPenzNincs": [
@@ -219,22 +221,16 @@
             ],
             "alvas": [
                 "Melletted pont üres egy hely, így lefekszel és elalszol."
-            ],
-            "leszallas": [
-                "A következő állomáson leszállsz a vonatról és körülnézel..."
             ]
         },
         "bolt": {
-            "vasarlas": [
-                "Veszel egy {targy}-t, ami {ar} forintba kerül."
-            ],
             "lopas": [
-                "Úgy döntesz, hogy lopsz egy {targy}-t",
                 "Vársz egy kicsit, majd mikor senki nem figyel rád, elrejted a kabátodban."
             ],
             "elkapnak": [
                 "Mikor el akarsz rohanni, a eladó meglát.",
-                "Az eladó hívja a rendőröket, akik elkapnak és börtönbe zárnak."
+                "Az eladó hívja a rendőröket, akik elkapnak és börtönbe zárnak.",
+                "Lecsuktak, Game Over"
             ],
             "seta": [
                 "Elsétálsz az állomásra, majd körülnézel..."
