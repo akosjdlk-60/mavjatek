@@ -1,23 +1,14 @@
 import asyncio
-import keyboard
-import menuk as menuk
+import sys
+import os
+sys.path.insert(0, f'{os.path.abspath(os.getcwd())}\\python')
+import menuk
 from dialogue_parser import read
-
-async def hotkeys():
-    def pressed_key(e: keyboard.KeyboardEvent):
-        match e.name:
-
-            case "r":
-                return
-
-            case "esc":
-                menuk.live.stop()
-                exit(0)
-
-    keyboard.on_release(pressed_key, suppress=True)
-
+varos = 2
+varos_refresh = False
 async def main():
-    asyncio.create_task(hotkeys())
+    global varos
+    global varos_refresh
     await asyncio.sleep(0.01)
     await menuk.load()
     
@@ -26,31 +17,67 @@ async def main():
         while menuk.get_info()[0]["varos"] != "Bécs":
             
             while True:
-                match menuk.get_info()[0]["varos"]:
+                if varos_refresh == True:
+                    match varos:
 
-                    case "Tatabánya":
-                        pass
+                        case 2:
+                            await menuk.print_szoveg(read("allomasok tatabanya"), False)
+                            menuk.set_kovetkezo_vonat([7, 15])
+                            varos_refresh = False
+                            statok = menuk.get_stats()
+                            statok["varos"] = "Tatabánya"
+                            statok["keregetett"] = True
+                            menuk.update_stats(statok=statok)
+                            varos += 1
 
-                    case "Győr":
-                        pass
-                    
-                x = await menuk.allomas_menu()
-                match x:
+                        case 3:
+                            await menuk.print_szoveg(read("allomasok gyor"), False)
+                            menuk.set_kovetkezo_vonat([12, 10])
+                            varos_refresh = False
+                            statok = menuk.get_stats()
+                            statok["varos"] = "Győr"
+                            statok["keregetett"] = True
+                            menuk.update_stats(statok=statok)
+                            varos += 1               
 
-                    case "bolt":
-                        bolt = await menuk.bolt_menu()
-                        match bolt:
-                            
-                            case "1":
-                                pass
+                while True:    
+                    allomas = await menuk.allomas_menu()
+                    match allomas:
 
-                    case "allomas":
-                        break
+                        case "bolt":
+                            while True:
+                                bolt = await menuk.bolt_menu()
+                                match bolt:
+                                    
+                                    case "allomas":
+                                        break
 
-                    case "vonat":
-                        vonat = await menuk.vonat_menu()
+                        case "allomas":
+                            continue
 
-        #bécs cuccos
+                        case "vonat":
+                            vonat = await menuk.vonat_menu()
+
+                            match vonat:
+                                case "allomas":
+                                    varos_refresh = True
+                                    break
+        
+        statok = menuk.get_stats()
+        statok["varos"] = "Tatabánya"
+        menuk.update_stats(statok=statok)
+        varos += 1
+
+        await menuk.print_szoveg(read("allomasok becs erkezes"), False)
+        if menuk.get_info()[0]["rozsa"]:
+            await menuk.print_szoveg(read("allomasok becs gazdag"), False)
+            await menuk.print_szoveg(read("allomasok becs temetes"), False)
+        else:
+            await menuk.print_szoveg(read("allomasok becs viragNincs"), False)
+            await menuk.print_szoveg(read("allomasok becs kitagadnak"), False)
+            await menuk.print_szoveg(read("allomasok becs temetes"), False)
+        exit(0)
+        
         
         
 asyncio.run(main())

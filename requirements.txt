@@ -1,4 +1,4 @@
 rich
-keyboard
 asyncio
 datetime
+pynput
