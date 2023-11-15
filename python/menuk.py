@@ -371,7 +371,7 @@ async def vonat_menu() -> str:
 async def bolt_menu() -> list:
     global statok
     global inventory
-    update_opciok(["Energiaital vásárlás", "Sportszelet vásárlás", "Fánk vásárlás", "Virág vásárlás", "Virág lopás", "Étel lopás", "Séta az állomásra", "Futás az állomásra"])
+    update_opciok(["Energiaital vásárlás (500 forint)", "Sportszelet vásárlás (180 forint)", "Fánk vásárlás (250 forint)", "Virág vásárlás (1500 forint)", "Virág lopás", "Étel lopás", "Séta az állomásra", "Futás az állomásra"])
     x = await waitforkey(["1", "2", "3", "4", "5", "6", "7", "8"])
     penz = statok["penz"]
     match x:
