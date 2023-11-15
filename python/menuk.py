@@ -542,23 +542,23 @@ def on_press(key):
     match k:
 
         case "q":
-            if inventory["Fánk"] <= 1:
+            if inventory["Fánk"] >= 1:
                 inventory["Fánk"] -=1
-                if 100 < statok["kaja"] + 50:
-                    statok["kaja"] += 50
-                else:
+                if 100 <= (statok["kaja"] + 50):
                     statok["kaja"] = 100
+                else:
+                    statok["kaja"] += 50
 
         case "w":
-            if inventory["Sportszelet"] <= 1:
+            if inventory["Sportszelet"] >= 1:
                 inventory["Sportszelet"] -=1
-                if 100 <= statok["kaja"] + 35:
-                    statok["kaja"] += 35
-                else:
+                if 100 <= (statok["kaja"] + 35):
                     statok["kaja"] = 100
+                else:
+                    statok["kaja"] += 35
 
         case "e":
-            if inventory["Energiaital"] <= 1:
+            if inventory["Energiaital"] >= 1:
                 inventory["Energiaital"] -=1
                 statok["energia"] = 100
 
