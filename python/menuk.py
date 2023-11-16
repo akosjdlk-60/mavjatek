@@ -57,7 +57,7 @@ async def load():
     penz = choices([50, 100, 200])[0]
     keyboard.Controller().press(Key.f11)
     await print_szoveg([" START\n\n[Space]"], False)
-    # await print_szoveg(read("allomasok budapest"), True, penz=penz)
+    await print_szoveg(read("allomasok budapest"), True, penz=penz)
     statok["penz"] += penz
     update_stats(statok, inventory)
 
