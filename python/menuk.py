@@ -19,7 +19,7 @@ layout = Layout()
 statok = {
     "penz": 0,
     "kaja": random.randint(50, 100),
-    "energia": random.randint(75, 90),
+    "energia": random.randint(75, 100),
     "varos": "Budapest",
     "rozsa": False,
     "jegy": False,
@@ -28,8 +28,8 @@ statok = {
 
 jegy_ar = 500
 energiaital_ar = 500
-sportszelet_ar = 180
-fank_ar = 200
+sportszelet_ar = 200
+fank_ar = 180
 rozsa_ar = 1000
 
 inventory = {"Fánk": 0, "Sportszelet": 1, "Energiaital": 0}
@@ -67,10 +67,14 @@ def update_stats(statok: dict = statok, inventory: dict = inventory) -> None:
     global ido
 
     stattable = Table(show_edge=True, show_lines=False, show_header=False, expand=True)
-    if statok["jegy"] == True:
+    if statok["jegy"]:
         jegy = "Van"
     else:
         jegy = "Nincs"
+    if statok["rozsa"]:
+        rozsa = "Van"
+    else:
+        rozsa = "Nincs"
 
     stattable.add_column(justify="center")
     stattable.add_column(justify="center")
@@ -86,6 +90,7 @@ def update_stats(statok: dict = statok, inventory: dict = inventory) -> None:
         f"Energia: {int(statok['energia'])}%",
         f"Jegy: {jegy}",
     )
+    stattable.add_row("", f"Virág: {rozsa}", "")
     stattable.add_section()
     stattable.add_row(
         f"Fánk: {inventory['Fánk']}",
@@ -188,6 +193,14 @@ async def allomas_menu() -> str:
 
     match x:
         case 1:
+            statok["energia"] -= 15
+            add_time(60)
+            sleep(0.01)
+            if statok["energia"] <= 0:
+                statok["energia"] = 0
+                update_stats()
+                await print_szoveg(read("meghalt energia"), False)
+                exit(0)
             event = choices(
                 ["rablas", 500, 200, 50, 10, "semmi"], weights=[7, 8, 12, 18, 20, 35]
             )
@@ -231,11 +244,17 @@ async def allomas_menu() -> str:
                     update_stats(statok)
                     add_time(15)
 
-            statok["energia"] -= 15
-            add_time(60)
             return "bolt"
 
         case 2:
+            statok["energia"] -= 30
+            add_time(30)
+            sleep(0.01)
+            if statok["energia"] <= 0:
+                statok["energia"] = 0
+                update_stats()
+                await print_szoveg(read("meghalt energia"), False)
+                exit(0)
             event = choices(
                 ["rablas", 500, 200, 50, 10, "semmi"], weights=[10, 5, 12, 18, 20, 35]
             )
@@ -268,6 +287,7 @@ async def allomas_menu() -> str:
                     await print_szoveg(read("eventek varos penz"), True, penz=10)
 
                 case "rablas":
+                    szazalek = randint(15, 50) / 100
                     penz = statok["penz"]
                     elveszt = penz - penz * szazalek
                     statok["penz"] -= int(elveszt)
@@ -278,8 +298,6 @@ async def allomas_menu() -> str:
                     )
                     add_time(15)
 
-            add_time(30)
-            statok["energia"] -= 30
             return "bolt"
 
         case 3:
@@ -307,7 +325,6 @@ async def allomas_menu() -> str:
             update_stats()
             if choices(["lecsuktak", lop_osszeg], weights=[10, 90])[0] == "lecsuktak":
                 await print_szoveg(read("menu allomas elkapnak"), False)
-                await print_szoveg(["Lecsuktak, Game Over"], False)
                 exit(0)
 
         case 6:
@@ -317,7 +334,6 @@ async def allomas_menu() -> str:
             update_stats()
             if choices(["lecsuktak", lop_osszeg], weights=[40, 60])[0] == "lecsuktak":
                 await print_szoveg(read("menu allomas elkapnak"), False)
-                await print_szoveg(["Lecsuktak, Game Over"], False)
                 exit(0)
 
         case 7:
@@ -347,7 +363,6 @@ async def vonat_menu() -> str:
                 await print_szoveg(read("menu vonat jegyNincs"), False, penz=1000)
                 if penz < 1000:
                     await print_szoveg(read("menu vonat jegyNincsPenzNincs"), False)
-                    await print_szoveg(["Lecsuktak, Game Over"], False)
                     exit(0)
                 else:
                     await print_szoveg(["Kifizeted a bírságot..."], True)
@@ -437,28 +452,32 @@ async def bolt_menu() -> list:
                     await print_szoveg(read("allomasok becs gazdag"), False)
                     await print_szoveg(read("allomasok becs temetes"), False)
                     exit(0)
-            await print_szoveg(read("menu bolt nincsPenz"), True)
+            else:
+                await print_szoveg(read("menu bolt nincsPenz"), True)
 
         case 2:
             if penz - sportszelet_ar >= 0:
                 inventory["Sportszelet"] += 1
                 statok["penz"] -= sportszelet_ar
                 await print_szoveg(["Vettél egy sportszeletet."], True)
-            await print_szoveg(read("menu bolt nincsPenz"), True)
+            else:
+                await print_szoveg(read("menu bolt nincsPenz"), True)
 
         case 3:
             if penz - fank_ar >= 0:
                 inventory["Fánk"] += 1
                 statok["penz"] -= fank_ar
                 await print_szoveg(["Vettél egy fánkot."], True)
-            await print_szoveg(read("menu bolt nincsPenz"), True)
+            else:
+                await print_szoveg(read("menu bolt nincsPenz"), True)
 
         case 4:
             if (statok["rozsa"] == False) and (penz - rozsa_ar >= 0):
                 statok["rozsa"] = True
                 statok["penz"] -= rozsa_ar
                 await print_szoveg(["Vettél egy rózsát."], True)
-            await print_szoveg(read("menu bolt nincsPenz"), True)
+            else:
+                await print_szoveg(read("menu bolt nincsPenz"), True)
 
         case 5:
             await print_szoveg(["Úgy döntesz, hogy lopsz egy virágot."], False)
@@ -479,6 +498,14 @@ async def bolt_menu() -> list:
             await print_szoveg(read("menu bolt lopas"), False)
 
         case 7:
+            statok["energia"] -= 15
+            add_time(60)
+            sleep(0.01)
+            if statok["energia"] <= 0:
+                statok["energia"] = 0
+                update_stats()
+                await print_szoveg(read("meghalt energia"), False)
+                exit(0)
             event = choices(
                 ["rablas", 500, 200, 50, 10, "semmi"], weights=[7, 8, 12, 18, 20, 35]
             )
@@ -522,11 +549,17 @@ async def bolt_menu() -> list:
                     update_stats(statok)
                     add_time(15)
 
-            statok["energia"] -= 15
-            add_time(60)
             return "allomas"
 
         case 8:
+            statok["energia"] -= 30
+            add_time(30)
+            sleep(0.01)
+            if statok["energia"] <= 0:
+                statok["energia"] = 0
+                update_stats()
+                await print_szoveg(read("meghalt energia"), False)
+                exit(0)
             event = choices(
                 ["rablas", 500, 200, 50, 10, "semmi"], weights=[10, 5, 12, 18, 20, 35]
             )
@@ -559,6 +592,7 @@ async def bolt_menu() -> list:
                     await print_szoveg(read("eventek varos penz"), True, penz=10)
 
                 case "rablas":
+                    szazalek = randint(15, 50) / 100
                     penz = statok["penz"]
                     elveszt = penz - penz * szazalek
                     statok["penz"] -= int(elveszt)
@@ -569,8 +603,6 @@ async def bolt_menu() -> list:
                     )
                     add_time(15)
 
-            statok["energia"] -= 30
-            add_time(30)
             return "allomas"
 
 
@@ -619,6 +651,10 @@ def on_press(key):
                     statok["kaja"] = 100
                 else:
                     statok["kaja"] += 35
+                if 100 <= (statok["energia"] + 20):
+                    statok["energia"] = 100
+                else:
+                    statok["energia"] += 20
 
         case "e":
             if inventory["Energiaital"] >= 1:
@@ -643,16 +679,18 @@ async def tick():
         ido += datetime.timedelta(minutes=1)
         update_stats()
         statok["energia"] -= 0.2
-        statok["kaja"] -= 0.1
+        statok["kaja"] -= 0.2
 
         if statok["energia"] <= 0:
+            statok["energia"] = 0
+            update_stats()
             await print_szoveg(read("meghalt energia"), False)
-            await print_szoveg(["Game over!"], False)
             exit(0)
 
         if statok["kaja"] <= 0:
+            statok["kaja"] = 0
+            update_stats()
             await print_szoveg(read("meghalt ehseg"), False)
-            await print_szoveg(["Game over!"], False)
             exit(0)
 
 

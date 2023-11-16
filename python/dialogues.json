@@ -1,10 +1,12 @@
 {
     "meghalt": {
         "ehseg": [
-            "Elfelejtettél enni, így sajnos éhen haltál."
+            "Elfelejtettél enni, így sajnos éhen haltál.",
+            "Game Over"
         ],
         "energia": [
-            "Mivel nem pótoltad az elhasznált energiád, meghaltál."
+            "Mivel nem pótoltad az elhasznált energiád, meghaltál.",
+            "Game Over"
         ]
     },
     "allomasok": {
@@ -186,7 +188,8 @@
             ],
             "elkapnak": [
                 "Mikor el akarsz rohanni, a rendőrök meglátnak.",
-                "Elkapnak, és börtönbe zárnak."
+                "Elkapnak, és börtönbe zárnak.",
+                "Lecsuktak, Game Over"
             ],
             "keregetes": [
                 "Odaállsz az egyik jegyautomata mellé és minden arra járó embertől pénzt kérsz.",
@@ -217,7 +220,8 @@
             ],
             "jegyNincsPenzNincs": [
                 "Elmondod az ellenőrnek, hogy nincs nálad ennyi pénz, így ő hívja a rendőröket.",
-                "Az ellenőr leszállít a vonatról, és a rendőrök börtönbe zárnak."
+                "Az ellenőr leszállít a vonatról, és a rendőrök börtönbe zárnak.",
+                "Game Over"
             ],
             "alvas": [
                 "Melletted pont üres egy hely, így lefekszel és elalszol."
