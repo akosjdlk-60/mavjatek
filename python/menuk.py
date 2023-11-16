@@ -57,7 +57,7 @@ async def load():
     penz = choices([50, 100, 200])[0]
     keyboard.Controller().press(Key.f11)
     await print_szoveg([" START\n\n[Space]"], False)
-    await print_szoveg(read("allomasok budapest"), True, penz=penz)
+    # await print_szoveg(read("allomasok budapest"), True, penz=penz)
     statok["penz"] += penz
     update_stats(statok, inventory)
 
@@ -323,7 +323,7 @@ async def allomas_menu() -> str:
             await print_szoveg(read("menu allomas lopasGyerek"), False, penz=lop_osszeg)
             statok["penz"] += lop_osszeg
             update_stats()
-            if choices(["lecsuktak", lop_osszeg], weights=[10, 90])[0] == "lecsuktak":
+            if choices(["lecsuktak", lop_osszeg], weights=[30, 70])[0] == "lecsuktak":
                 await print_szoveg(read("menu allomas elkapnak"), False)
                 exit(0)
 
@@ -332,7 +332,7 @@ async def allomas_menu() -> str:
             await print_szoveg(read("menu allomas lopasFerfi"), False, penz=lop_osszeg)
             statok["penz"] += lop_osszeg
             update_stats()
-            if choices(["lecsuktak", lop_osszeg], weights=[40, 60])[0] == "lecsuktak":
+            if choices(["lecsuktak", lop_osszeg], weights=[50, 50])[0] == "lecsuktak":
                 await print_szoveg(read("menu allomas elkapnak"), False)
                 exit(0)
 
@@ -446,6 +446,7 @@ async def bolt_menu() -> list:
             if penz - energiaital_ar >= 0:
                 inventory["Energiaital"] += 1
                 statok["penz"] -= energiaital_ar
+                update_stats()
                 await print_szoveg(["Vettél egy Energiaitalt"], True)
                 if statok["varos"] == "Tatabánya":
                     await print_szoveg(read("allomasok becs dancika"), False)
@@ -459,6 +460,7 @@ async def bolt_menu() -> list:
             if penz - sportszelet_ar >= 0:
                 inventory["Sportszelet"] += 1
                 statok["penz"] -= sportszelet_ar
+                update_stats()
                 await print_szoveg(["Vettél egy sportszeletet."], True)
             else:
                 await print_szoveg(read("menu bolt nincsPenz"), True)
@@ -467,6 +469,7 @@ async def bolt_menu() -> list:
             if penz - fank_ar >= 0:
                 inventory["Fánk"] += 1
                 statok["penz"] -= fank_ar
+                update_stats()
                 await print_szoveg(["Vettél egy fánkot."], True)
             else:
                 await print_szoveg(read("menu bolt nincsPenz"), True)
@@ -475,18 +478,22 @@ async def bolt_menu() -> list:
             if (statok["rozsa"] == False) and (penz - rozsa_ar >= 0):
                 statok["rozsa"] = True
                 statok["penz"] -= rozsa_ar
+                update_stats()
                 await print_szoveg(["Vettél egy rózsát."], True)
             else:
                 await print_szoveg(read("menu bolt nincsPenz"), True)
 
         case 5:
-            await print_szoveg(["Úgy döntesz, hogy lopsz egy virágot."], False)
-            x = choices(["elkap", "nemElkap"], weights=[60, 40])
-            if x[0] == "elkap":
-                await print_szoveg(read("menu bolt elkapnak"), False)
-                exit(0)
+            if statok["rozsa"] == False:
+                await print_szoveg(["Úgy döntesz, hogy lopsz egy virágot."], False)
+                x = choices(["elkap", "nemElkap"], weights=[60, 40])
+                if x[0] == "elkap":
+                    await print_szoveg(read("menu bolt elkapnak"), False)
+                    exit(0)
 
-            await print_szoveg(read("menu bolt lopas"), False)
+                statok["rozsa"] = True
+                update_stats()
+                await print_szoveg(read("menu bolt lopas"), False)
 
         case 6:
             await print_szoveg(["Úgy döntesz, hogy lopsz egy sportszeletet."], False)
@@ -495,6 +502,8 @@ async def bolt_menu() -> list:
                 await print_szoveg(read("menu bolt elkapnak"), False)
                 exit(0)
 
+            inventory["Sportszelet"] += 1
+            update_stats()
             await print_szoveg(read("menu bolt lopas"), False)
 
         case 7:
@@ -635,6 +644,7 @@ def on_press(key):
     except:
         k = key.name
 
+    update_stats()
     match k:
         case "q":
             if inventory["Fánk"] >= 1:
