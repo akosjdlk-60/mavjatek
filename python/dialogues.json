@@ -167,7 +167,7 @@
                 "Odasétálsz az egyik jegyautomatához és vásárolsz egy jegyet a következő állomásig."
             ],
             "jegyVasarlasNincsPenz": [
-                "Odasétálsz az egyik jegyautomatához, hogy vegyél egy jegyet, ám feltűnik hogy nincs elég pénzed...."
+                "Odasétálsz az egyik jegyautomatához, hogy vegyél egy jegyet, ám feltűnik hogy nincs elég pénzed..."
             ],
             "lopasGyerek": [
                 "Meglátsz egy kisgyereket és elállod az útját.",
@@ -237,6 +237,9 @@
             ],
             "futas": [
                 "Elfutsz az állomásra és mikor odaérsz körülnézel..."
+            ],
+            "nincsPenz": [
+                "Nincs elég pénzed."
             ]
         }
     }

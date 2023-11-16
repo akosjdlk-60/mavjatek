@@ -18,7 +18,7 @@ async def main():
     await menuk.load()
 
     while True:  # soha nem lepunk ki
-        while menuk.get_stats()['varos'] != "Bécs":
+        while menuk.get_stats()["varos"] != "Bécs":
             while True:
                 if varos_refresh == True:
                     match varos:

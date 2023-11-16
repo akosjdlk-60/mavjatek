@@ -26,6 +26,12 @@ statok = {
     "keregetett": False,
 }
 
+jegy_ar = 500
+energiaital_ar = 500
+sportszelet_ar = 180
+fank_ar = 200
+rozsa_ar = 1000
+
 inventory = {"Fánk": 0, "Sportszelet": 1, "Energiaital": 0}
 
 kovetkezo_vonat = [16, 32]
@@ -50,8 +56,8 @@ async def load():
     live.start()
     penz = choices([50, 100, 200])[0]
     keyboard.Controller().press(Key.f11)
-    await print_szoveg(["[START]"], False)
-    await print_szoveg(read("allomasok budapest"), True, penz=penz)
+    await print_szoveg([" START\n\n[Space]"], False)
+    # await print_szoveg(read("allomasok budapest"), True, penz=penz)
     statok["penz"] += penz
     update_stats(statok, inventory)
 
@@ -152,8 +158,8 @@ async def allomas_menu() -> str:
     global statok
     global inventory
     global kovetkezo_vonat
+    global jegy_ar
 
-    jegy_ar = randint(500, 600)
     if statok["keregetett"]:
         update_opciok(
             [
@@ -362,7 +368,7 @@ async def vonat_menu() -> str:
     match x:
         case 1:
             await print_szoveg(read("menu vonat alvas"), False)
-            statok["energia"] += 50
+            statok["energia"] += 35
             if statok["energia"] > 100:
                 statok["energia"] = 100
 
@@ -401,12 +407,17 @@ async def vonat_menu() -> str:
 async def bolt_menu() -> list:
     global statok
     global inventory
+    global energiaital_ar
+    global sportszelet_ar
+    global fank_ar
+    global rozsa_ar
+
     update_opciok(
         [
-            "Energiaital vásárlás (500 Ft)",
-            "Sportszelet vásárlás (180 Ft)",
-            "Fánk vásárlás (250 Ft)",
-            "Virág vásárlás (1500 Ft)",
+            f"Energiaital vásárlás ({energiaital_ar} Ft)",
+            f"Sportszelet vásárlás ({sportszelet_ar} Ft)",
+            f"Fánk vásárlás ({fank_ar} Ft)",
+            f"Virág vásárlás ({rozsa_ar} Ft)",
             "Virág lopás",
             "Étel lopás",
             "Séta az állomásra",
@@ -417,33 +428,37 @@ async def bolt_menu() -> list:
     penz = statok["penz"]
     match x:
         case 1:
-            if penz - 500 >= 0:
+            if penz - energiaital_ar >= 0:
                 inventory["Energiaital"] += 1
-                statok["penz"] -= 500
+                statok["penz"] -= energiaital_ar
                 await print_szoveg(["Vettél egy Energiaitalt"], True)
                 if statok["varos"] == "Tatabánya":
                     await print_szoveg(read("allomasok becs dancika"), False)
                     await print_szoveg(read("allomasok becs gazdag"), False)
                     await print_szoveg(read("allomasok becs temetes"), False)
                     exit(0)
+            await print_szoveg(read("menu bolt nincsPenz"), True)
 
         case 2:
-            if penz - 180 >= 0:
+            if penz - sportszelet_ar >= 0:
                 inventory["Sportszelet"] += 1
-                statok["penz"] -= 180
+                statok["penz"] -= sportszelet_ar
                 await print_szoveg(["Vettél egy sportszeletet."], True)
+            await print_szoveg(read("menu bolt nincsPenz"), True)
 
         case 3:
-            if penz - 250 >= 0:
+            if penz - fank_ar >= 0:
                 inventory["Fánk"] += 1
-                statok["penz"] -= 250
+                statok["penz"] -= fank_ar
                 await print_szoveg(["Vettél egy fánkot."], True)
+            await print_szoveg(read("menu bolt nincsPenz"), True)
 
         case 4:
-            if penz - 1500 >= 0:
+            if (statok["rozsa"] == False) and (penz - rozsa_ar >= 0):
                 statok["rozsa"] = True
-                statok["penz"] -= 1500
+                statok["penz"] -= rozsa_ar
                 await print_szoveg(["Vettél egy rózsát."], True)
+            await print_szoveg(read("menu bolt nincsPenz"), True)
 
         case 5:
             await print_szoveg(["Úgy döntesz, hogy lopsz egy virágot."], False)
