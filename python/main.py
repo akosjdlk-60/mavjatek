@@ -18,7 +18,7 @@ async def main():
     await menuk.load()
 
     while True:  # soha nem lepunk ki
-        while menuk.get_info()[0]["varos"] != "Bécs":
+        while menuk.get_stats()['varos'] != "Bécs":
             while True:
                 if varos_refresh == True:
                     match varos:
@@ -52,7 +52,7 @@ async def main():
                             )
                             x = choices(["elut", "nemElut"], weights=[30, 70])
                             if x[0] == "nemElut":
-                                if menuk.get_info()[0]["rozsa"]:
+                                if menuk.get_stats()["rozsa"]:
                                     await menuk.print_szoveg(
                                         read("allomasok becs gazdag"), False
                                     )

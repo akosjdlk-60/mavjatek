@@ -7,8 +7,8 @@ from rich.text import Text
 import datetime
 from asyncio import sleep
 from os import system as cmd
-import os
 from pynput import keyboard
+from pynput.keyboard import Key
 import asyncio
 from random import randint, choices
 from dialogue_parser import read
@@ -45,10 +45,12 @@ async def load():
     helptable.add_column(justify="left")
     helptable.add_row("1-9: Opciók", "Q: Fánk evés")
     helptable.add_row("Space: Tovább", "W: Sportszelet evés")
-    helptable.add_row("R: Frissítés", "E: Energiaital ivás")
+    helptable.add_row("", "E: Energiaital ivás")
     layout["help"].update(Align(helptable, "center", vertical="middle", pad=True))
     live.start()
     penz = choices([50, 100, 200])[0]
+    keyboard.Controller().press(Key.f11)
+    await print_szoveg(["[START]"], False)
     await print_szoveg(read("allomasok budapest"), True, penz=penz)
     statok["penz"] += penz
     update_stats(statok, inventory)
@@ -69,7 +71,9 @@ def update_stats(statok: dict = statok, inventory: dict = inventory) -> None:
     stattable.add_column(justify="center")
 
     stattable.add_row(
-        f"Pénz: {statok['penz']}", f"{statok['varos']}", f"Idő: {ido.strftime('%H:%M')}"
+        f"Pénz: {statok['penz']} Ft",
+        f"{statok['varos']}",
+        f"Idő: {ido.strftime('%H:%M')}",
     )
     stattable.add_row(
         f"Kaja: {int(statok['kaja'])}%",
@@ -154,11 +158,11 @@ async def allomas_menu() -> str:
         update_opciok(
             [
                 "Séta a boltba (1 óra)",
-                "Futás a boltba (0.5 óra)",
-                f"Jegyvásárlás ({jegy_ar} Pénz)",
+                "Futás a boltba (fél óra)",
+                f"Jegyvásárlás ({jegy_ar} Ft)",
                 f"Vársz, majd felszállsz a vonatra {kovetkezo_vonat[0]}:{kovetkezo_vonat[1]}-kor",
-                "Kisgyerek meglopása (+100 - +250 Pénz)",
-                "Öltönyös úriember meglopása (+300 - +600 Pénz)",
+                "Kisgyerek meglopása (100 - 250 Ft)",
+                "Öltönyös úriember meglopása (300 - 600 Ft)",
             ]
         )
         x = await waitforkey(["1", "2", "3", "4", "5", "6"])
@@ -166,11 +170,11 @@ async def allomas_menu() -> str:
         update_opciok(
             [
                 "Séta a boltba (1 óra)",
-                "Futás a boltba (0.5 óra)",
-                f"Jegyvásárlás ({jegy_ar} Pénz)",
+                "Futás a boltba (fél óra)",
+                f"Jegyvásárlás ({jegy_ar} Ft)",
                 f"Vársz, majd felszállsz a vonatra {kovetkezo_vonat[0]}:{kovetkezo_vonat[1]}-kor",
-                "Kisgyerek meglopása (+100 - +250 Pénz)",
-                "Öltönyös úriember meglopása (+300 - +600 Pénz)",
+                "Kisgyerek meglopása (100 - 250 Ft)",
+                "Öltönyös úriember meglopása (300 - 600 Ft)",
                 "Kéregetés",
             ]
         )
@@ -221,6 +225,7 @@ async def allomas_menu() -> str:
                     update_stats(statok)
                     add_time(15)
 
+            statok["energia"] -= 15
             add_time(60)
             return "bolt"
 
@@ -268,6 +273,7 @@ async def allomas_menu() -> str:
                     add_time(15)
 
             add_time(30)
+            statok["energia"] -= 30
             return "bolt"
 
         case 3:
@@ -501,6 +507,7 @@ async def bolt_menu() -> list:
                     update_stats(statok)
                     add_time(15)
 
+            statok["energia"] -= 15
             add_time(60)
             return "allomas"
 
@@ -547,6 +554,7 @@ async def bolt_menu() -> list:
                     )
                     add_time(15)
 
+            statok["energia"] -= 30
             add_time(30)
             return "allomas"
 
@@ -671,14 +679,6 @@ async def print_szoveg(szovegz: list, tovabb: bool, **kwargs):
                 await waitforkey("space")
         else:
             await waitforkey("space")
-
-
-def get_info() -> list[statok, inventory]:
-    return_list = []
-    return_list.append(statok)
-    return_list.append(inventory)
-
-    return return_list
 
 
 def set_kovetkezo_vonat(input: list):
