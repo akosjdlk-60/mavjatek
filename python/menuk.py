@@ -414,8 +414,7 @@ async def vonat_menu() -> str:
                     await print_szoveg(read("eventek vonat vezetekSzakadas"), False)
                     add_time(120)
 
-            add_time(120)
-
+    add_time(120)
     return "allomas"
 
 
@@ -447,8 +446,10 @@ async def bolt_menu() -> list:
                 inventory["Energiaital"] += 1
                 statok["penz"] -= energiaital_ar
                 update_stats()
-                await print_szoveg(["Vettél egy Energiaitalt"], True)
+                await print_szoveg(["Vettél egy Energiaitalt."], True)
                 if statok["varos"] == "Tatabánya":
+                    await sleep(1)
+                    statok["rozsa"] = True
                     await print_szoveg(read("allomasok becs dancika"), False)
                     await print_szoveg(read("allomasok becs gazdag"), False)
                     await print_szoveg(read("allomasok becs temetes"), False)
@@ -475,13 +476,16 @@ async def bolt_menu() -> list:
                 await print_szoveg(read("menu bolt nincsPenz"), True)
 
         case 4:
-            if (statok["rozsa"] == False) and (penz - rozsa_ar >= 0):
-                statok["rozsa"] = True
-                statok["penz"] -= rozsa_ar
-                update_stats()
-                await print_szoveg(["Vettél egy rózsát."], True)
+            if statok["rozsa"] == False:
+                if penz - rozsa_ar >= 0:
+                    statok["rozsa"] = True
+                    statok["penz"] -= rozsa_ar
+                    update_stats()
+                    await print_szoveg(["Vettél egy rózsát."], True)
+                else:
+                    await print_szoveg(read("menu bolt nincsPenz"), True)
             else:
-                await print_szoveg(read("menu bolt nincsPenz"), True)
+                await print_szoveg(["Már van virágod."], True)
 
         case 5:
             if statok["rozsa"] == False:
@@ -494,6 +498,8 @@ async def bolt_menu() -> list:
                 statok["rozsa"] = True
                 update_stats()
                 await print_szoveg(read("menu bolt lopas"), False)
+            else:
+                await print_szoveg(["Már van virágod."], True)
 
         case 6:
             await print_szoveg(["Úgy döntesz, hogy lopsz egy sportszeletet."], False)
@@ -747,6 +753,15 @@ async def print_szoveg(szovegz: list, tovabb: bool, **kwargs):
 def set_kovetkezo_vonat(input: list):
     global kovetkezo_vonat
     kovetkezo_vonat = input
+
+
+def nemElkesett() -> bool:
+    if ido.day == 1:
+        return True
+    if ido.hour >= 15:
+        return False
+    else:
+        return True
 
 
 live = Live(layout, auto_refresh=True, refresh_per_second=60)

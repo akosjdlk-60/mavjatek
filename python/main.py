@@ -50,25 +50,36 @@ async def main():
                             await menuk.print_szoveg(
                                 read("allomasok becs erkezes"), False
                             )
-                            x = choices(["elut", "nemElut"], weights=[30, 70])
+                            x = choices(["elut", "nemElut"], weights=[20, 80])
                             if x[0] == "nemElut":
-                                if menuk.get_stats()["rozsa"]:
-                                    await menuk.print_szoveg(
-                                        read("allomasok becs gazdag"), False
-                                    )
-                                    await menuk.print_szoveg(
-                                        read("allomasok becs temetes"), False
-                                    )
-                                else:
-                                    await menuk.print_szoveg(
-                                        read("allomasok becs viragNincs"), False
-                                    )
-                                    await menuk.print_szoveg(
-                                        read("allomasok becs kitagadnak"), False
-                                    )
-                                    await menuk.print_szoveg(
-                                        read("allomasok becs temetes"), False
-                                    )
+                                if menuk.nemElkesett():
+                                    if menuk.get_stats()["rozsa"]:
+                                        await menuk.print_szoveg(
+                                            read("allomasok becs gazdag"), False
+                                        )
+                                        await menuk.print_szoveg(
+                                            read("allomasok becs temetes"), False
+                                        )
+                                    else:
+                                        await menuk.print_szoveg(
+                                            read("allomasok becs viragNincs"), False
+                                        )
+                                        await menuk.print_szoveg(
+                                            read("allomasok becs kitagadnak"), False
+                                        )
+                                        await menuk.print_szoveg(
+                                            read("allomasok becs temetes"), False
+                                        )
+                                    exit(0)
+                                await menuk.print_szoveg(
+                                    read("allomasok becs elkesett"), False
+                                )
+                                await menuk.print_szoveg(
+                                    read("allomasok becs kitagadnak"), False
+                                )
+                                await menuk.print_szoveg(
+                                    read("allomasok becs temetes"), False
+                                )
                                 exit(0)
                             await menuk.print_szoveg(
                                 read("allomasok becs vonatElut"), False
