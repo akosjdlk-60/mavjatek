@@ -314,9 +314,15 @@ async def allomas_menu() -> str:
                 return "allomas"
 
         case 4:
-            await print_szoveg(read("menu allomas felszallas"), False)
-            set_time(kovetkezo_vonat[0], kovetkezo_vonat[1])
-            return "vonat"
+            if (ido.hour < kovetkezo_vonat[0]) or ((ido.hour == kovetkezo_vonat[0]) and (ido.minute < kovetkezo_vonat[1])):
+                await print_szoveg(read("menu allomas felszallas"), False)
+                set_time(kovetkezo_vonat[0], kovetkezo_vonat[1])
+                return "vonat"
+            else:
+                await print_szoveg(["Mikor keresed a vonatod, ránézel az órára."], False)
+                await print_szoveg(["Szomorúan látod, hogy elkéstél."], False)
+                await print_szoveg(["Game Over"], False)
+                exit(0)
 
         case 5:
             lop_osszeg = randint(100, 250)
@@ -663,10 +669,10 @@ def on_press(key):
         case "w":
             if inventory["Sportszelet"] >= 1:
                 inventory["Sportszelet"] -= 1
-                if 100 <= (statok["kaja"] + 35):
+                if 100 <= (statok["kaja"] + 25):
                     statok["kaja"] = 100
                 else:
-                    statok["kaja"] += 35
+                    statok["kaja"] += 25
                 if 100 <= (statok["energia"] + 20):
                     statok["energia"] = 100
                 else:
